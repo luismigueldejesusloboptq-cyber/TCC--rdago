@@ -1,12 +1,11 @@
-<app-intro></app-intro> 
+<app-intro></app-intro>
 
-<router-outlet></router-outlet>
-<app-intro></app-intro> 
-
-<div *ngIf="isSiteReady">
+<div>
     <app-header></app-header>
     
-    <router-outlet></router-outlet>
+    <main>
+        <router-outlet></router-outlet>
+    </main>
     
     <app-footer></app-footer>
 </div>

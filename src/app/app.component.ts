@@ -1,27 +1,36 @@
-// src/app/app.component.ts (Corrigido)
-
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { IntroComponent } from './intro/intro.component'; 
-import { HeaderComponent } from './header/header.component'; // <-- NOVO IMPORT
-import { FooterComponent } from './footer/footer.component'; // <-- NOVO IMPORT
+
+
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { IntroComponent } from './intro/intro.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  // Adicione HeaderComponent e FooterComponent à lista de imports:
   imports: [
-    RouterOutlet, 
-    IntroComponent, 
-    HeaderComponent,  // <-- ADICIONE AQUI
-    FooterComponent   // <-- ADICIONE AQUI
-  ], 
+    RouterOutlet,
+    HeaderComponent,
+    FooterComponent,
+    IntroComponent
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'TCC-Ordago';
-  
-  // Lembre-se, você precisará desta variável para controlar a visibilidade:
-  isSiteReady: boolean = false; 
+export class AppComponent implements OnInit {
+
+
+  showIntro: boolean = true;
+
+
+  private introDurationMs: number = 4000;
+
+  ngOnInit(): void {
+
+    setTimeout(() => {
+      this.showIntro = false;
+
+    }, this.introDurationMs);
+  }
 }
