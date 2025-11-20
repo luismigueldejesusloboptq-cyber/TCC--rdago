@@ -1,11 +1,76 @@
-/* header.component.css */
+/* Valores Padrão Neon */
+/* Neon Blue: #00BFFF */
+/* Neon Purple: #8A2BE2 */
 
-nav.navbar {
-    padding: 17px 0;
+/* --- Centralização da Navbar --- */
+.navbar-ordago {
+    /* Garante que a barra superior ocupe toda a largura */
+    width: 100%;
+    padding: 20px 0;
+    background-color: transparent; 
+    text-transform: uppercase;
 }
 
-.Logo-header{
-    border-radius: 95px;
-    width: 50px;
-    height:50px;
+.main-nav {
+    display: flex; /* ATIVA O FLEXBOX */
+    justify-content: center; /* ✅ CENTRALIZA OS ITENS HORIZONTALMENTE */
+    align-items: center;
+    gap: 3.5em; /* Espaçamento entre os links */
+    /* Garante que o menu em si esteja centralizado */
+    width: fit-content; 
+    margin: 0 auto; 
 }
+
+/* --- Estilos dos Links (Hoverable) --- */
+
+.hoverable {
+    display: inline-block;
+    backface-visibility: hidden;
+    vertical-align: middle;
+    position: relative;
+    color: white; /* Cor inicial */
+    text-decoration: none;
+    font-weight: 600;
+    
+    /* Efeito de Transformação (Pull Up) */
+    transform: translateZ(0);
+    transition-duration: .3s;
+    transition-property: transform, color;
+}
+
+.hoverable:hover, 
+.hoverable:active, 
+.hoverable:focus {
+    transform: translateY(-5px);
+    color: #00BFFF; /* Neon Blue no hover */
+}
+
+/* --- Efeito de Sombra (Chão) no Hover (Mantido do seu código) --- */
+.hoverable:before {
+    position: absolute;
+    pointer-events: none;
+    z-index: -1;
+    content: '';
+    top: 100%;
+    left: 5%;
+    height: 10px;
+    width: 90%;
+    opacity: 0;
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 80%);
+    transition-duration: 0.3s;
+    transition-property: transform, opacity;
+}
+
+.hoverable:hover:before, 
+.hoverable:active:before, 
+.hoverable:focus:before {
+    opacity: 1;
+    transform: translateY(-5px);
+}
+
+
+.bounce {
+    animation-name: bounce-animation;
+    animation-duration: 2s;
+}
+

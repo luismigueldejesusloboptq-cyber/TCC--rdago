@@ -1,0 +1,189 @@
+.services-section {
+    padding: 100px 50px;
+    background-color: #ffffff;
+    color: white;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 50px;
+    color: #00BFFF; 
+    text-transform: uppercase;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background-color: #1c1c2b;
+    padding: 30px;
+    border-radius: 15px;
+    text-decoration: none; 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.service-card:hover { 
+    transform: translateY(-5px); 
+    border-color: #00BFFF; 
+    box-shadow: 0 5px 30px rgba(0, 191, 255, 0.2), 0 0 10px rgba(138, 43, 226, 0.5); 
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #8A2BE2; 
+    transition: color 0.3s ease;
+}
+
+.service-card:hover .card-icon {
+    color: #00BFFF;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.card-description {
+    color: #b0b0d0;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+.card-cta {
+    display: inline-block;
+    color: #8A2BE2; 
+    transition: margin-left 0.3s ease;
+}
+
+.service-card:hover .card-cta {
+    margin-left: 5px; 
+}
+
+/* Valores (Substituídos) */
+/* Neon Blue: #00BFFF */
+/* Neon Purple: #8A2BE2 */
+
+.future-cta-section {
+    padding: 100px 50px;
+    background-color: gray; /* Fundo mais escuro para o CTA */
+    color: white;
+    text-align: center;
+    height: auto;
+}
+
+.future-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #00BFFF;
+    margin-bottom: 60px;
+}
+
+.future-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto 80px;
+}
+
+.future-item {
+    flex: 1;
+    padding: 20px;
+    border-right: 2px solid rgba(138, 43, 226, 0.4); /* Linhas divisórias neon */
+    text-align: center;
+}
+
+.future-item:last-child {
+    border-right: none; /* Remove a borda do último item */
+}
+
+.future-item .card-icon { /* Usando o mesmo estilo de ícone anterior */
+    font-size: 2.5rem;
+    color: #8A2BE2;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.future-item:hover .card-icon {
+    color: #00BFFF;
+}
+
+.future-item h3 {
+    font-size: 1.4rem;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.future-item p {
+    color: #b0b0d0;
+    font-size: 0.95rem;
+}
+
+
+/* ---------------------------------- */
+/* Estilos do CTA Agressivo */
+/* ---------------------------------- */
+
+.cta-banner {
+    background-color: #1c1c2b;
+    padding: 50px 30px;
+    border-radius: 15px;
+    border: 3px solid #00BFFF; /* Borda chamativa */
+    box-shadow: 0 0 40px rgba(0, 191, 255, 0.5); /* Brilho intenso */
+    max-width: 900px;
+    margin: 60px auto 0;
+}
+
+.cta-headline {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #C0C0C0;
+    margin-bottom: 5px;
+}
+
+.cta-value {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #8A2BE2; /* Título principal do CTA em roxo neon */
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px rgba(138, 43, 226, 0.7);
+}
+
+.cta-final-button {
+    /* Customização do botão PrimeNG para ser Neon */
+    background: #00BFFF !important; /* Neon Blue */
+    border-color: #00BFFF !important;
+    color: black !important;
+    font-weight: 700 !important;
+    font-size: 1.1rem !important;
+    padding: 15px 40px !important;
+    transition: all 0.3s ease;
+}
+
+.cta-final-button:hover {
+    background: #23d2ff !important;
+    box-shadow: 0 0 25px rgba(0, 191, 255, 0.8);
+} 
+.futuristic-footer {
+    background-color: #0A0A10; /* Fundo muito escuro */
+    color: white;
+    padding: 60px 50px 30px;
+    
+    /* 1. DIVISOR DE LINHA NEON */
+    border-top: 2px solid #00BFFF; /* Borda Neon Azul visível */
+    box-shadow: 0 -5px 20px rgba(0, 191, 255, 0.2); /* Sombra sutil para destacar a linha */
+}
+
