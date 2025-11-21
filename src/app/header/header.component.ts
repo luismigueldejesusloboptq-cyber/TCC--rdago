@@ -1,15 +1,16 @@
 import { Component, OnInit, Renderer2, OnDestroy } from '@angular/core';
-import { interval, Subscription } from 'rxjs'; // Importação útil para animações em Angular
+import { interval, Subscription } from 'rxjs'; 
+
 
 @Component({
-selector: 'app-header', // ✅ Seletor padrão para o Header
- templateUrl: './header.component.html', // ✅ Caminho corrigido para a mesma pasta
-styleUrls: ['./header.component.css'] // (ou .scss)
+selector: 'app-header', 
+ templateUrl: './header.component.html', 
+styleUrls: ['./header.component.css'] 
 })
-// ✅ Use HeaderComponent para que o AppComponent possa importá-lo corretamente
+
 export class HeaderComponent implements OnInit, OnDestroy { 
 
-private animationInterval: any; // Mantemos o nome para compatibilidade com o JS
+private animationInterval: any; 
  private currentElementIndex: number = 1;
  private maxElements: number = 4;
 
@@ -25,7 +26,7 @@ clearInterval(this.animationInterval);
  }
  }
 
-  // Restante da sua lógica de animação permanece a mesma, pois estava correta para o TS
+
  startAnimation(): void {
  this.animationInterval = setInterval(() => {
  if (this.currentElementIndex > this.maxElements) {

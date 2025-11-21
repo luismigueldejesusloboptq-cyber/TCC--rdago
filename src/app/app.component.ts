@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, RouterModule } from '@angular/router';
 
 
 import { HeaderComponent } from './header/header.component';
@@ -11,6 +11,7 @@ import { IntroComponent } from './intro/intro.component';
   standalone: true,
   imports: [
     RouterOutlet,
+    RouterModule,
     HeaderComponent,
     FooterComponent,
     IntroComponent

@@ -9,13 +9,13 @@
     font-size: 2.5rem;
     font-weight: 600;
     margin-bottom: 50px;
-    color: #00BFFF; 
+    color: #00BFFF;
     text-transform: uppercase;
 }
 
 .cards-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
@@ -25,7 +25,7 @@
     background-color: #1c1c2b;
     padding: 30px;
     border-radius: 15px;
-    text-decoration: none; 
+    text-decoration: none;
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
     cursor: pointer;
@@ -34,16 +34,16 @@
 }
 
 
-.service-card:hover { 
-    transform: translateY(-5px); 
-    border-color: #00BFFF; 
-    box-shadow: 0 5px 30px rgba(0, 191, 255, 0.2), 0 0 10px rgba(138, 43, 226, 0.5); 
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: #00BFFF;
+    box-shadow: 0 5px 30px rgba(0, 191, 255, 0.2), 0 0 10px rgba(138, 43, 226, 0.5);
 }
 
 .card-icon {
     font-size: 3rem;
     margin-bottom: 15px;
-    color: #8A2BE2; 
+    color: #8A2BE2;
     transition: color 0.3s ease;
 }
 
@@ -64,21 +64,18 @@
 
 .card-cta {
     display: inline-block;
-    color: #8A2BE2; 
+    color: #8A2BE2;
     transition: margin-left 0.3s ease;
 }
 
 .service-card:hover .card-cta {
-    margin-left: 5px; 
+    margin-left: 5px;
 }
 
-/* Valores (Substituídos) */
-/* Neon Blue: #00BFFF */
-/* Neon Purple: #8A2BE2 */
 
 .future-cta-section {
     padding: 100px 50px;
-    background-color: gray; /* Fundo mais escuro para o CTA */
+    background: linear-gradient(to bottom, #0d1b2a, #000000);
     color: white;
     text-align: center;
     height: auto;
@@ -87,7 +84,7 @@
 .future-title {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #00BFFF;
+    color: red;
     margin-bottom: 60px;
 }
 
@@ -102,15 +99,18 @@
 .future-item {
     flex: 1;
     padding: 20px;
-    border-right: 2px solid rgba(138, 43, 226, 0.4); /* Linhas divisórias neon */
+    border-right: 2px solid  rgba(255, 0, 0, 0.5);
+
     text-align: center;
 }
 
 .future-item:last-child {
-    border-right: none; /* Remove a borda do último item */
+    border-right: none;
+
 }
 
-.future-item .card-icon { /* Usando o mesmo estilo de ícone anterior */
+.future-item .card-icon {
+   
     font-size: 2.5rem;
     color: #8A2BE2;
     margin-bottom: 15px;
@@ -118,7 +118,7 @@
 }
 
 .future-item:hover .card-icon {
-    color: #00BFFF;
+    color: #ff0000;
 }
 
 .future-item h3 {
@@ -141,10 +141,21 @@
     background-color: #1c1c2b;
     padding: 50px 30px;
     border-radius: 15px;
-    border: 3px solid #00BFFF; /* Borda chamativa */
-    box-shadow: 0 0 40px rgba(0, 191, 255, 0.5); /* Brilho intenso */
     max-width: 900px;
     margin: 60px auto 0;
+    border: 3px solid transparent;
+    box-shadow: none;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.cta-banner h2 {
+    color: #ffffff;
+    font-family: 'Science Gothic',sans-serif;;
+}
+
+.btn btn-primary btn-lg{
+    color: #ff0000;
 }
 
 .cta-headline {
@@ -157,14 +168,16 @@
 .cta-value {
     font-size: 2.8rem;
     font-weight: 800;
-    color: #8A2BE2; /* Título principal do CTA em roxo neon */
+    color: #8A2BE2;
+   
     margin-bottom: 30px;
     text-shadow: 0 0 10px rgba(138, 43, 226, 0.7);
 }
 
 .cta-final-button {
-    /* Customização do botão PrimeNG para ser Neon */
-    background: #00BFFF !important; /* Neon Blue */
+ 
+    background: #00BFFF !important;
+  
     border-color: #00BFFF !important;
     color: black !important;
     font-weight: 700 !important;
@@ -176,14 +189,44 @@
 .cta-final-button:hover {
     background: #23d2ff !important;
     box-shadow: 0 0 25px rgba(0, 191, 255, 0.8);
-} 
-.futuristic-footer {
-    background-color: #0A0A10; /* Fundo muito escuro */
-    color: white;
-    padding: 60px 50px 30px;
-    
-    /* 1. DIVISOR DE LINHA NEON */
-    border-top: 2px solid #00BFFF; /* Borda Neon Azul visível */
-    box-shadow: 0 -5px 20px rgba(0, 191, 255, 0.2); /* Sombra sutil para destacar a linha */
 }
 
+.futuristic-footer {
+    background-color: #0A0A10;
+
+    color: white;
+    padding: 60px 50px 30px;
+
+   
+    border-top: 2px solid #00BFFF;
+ 
+    box-shadow: 0 -5px 20px rgba(0, 191, 255, 0.2);
+
+} 
+
+
+.future-cta-section .cta-banner {
+  
+    border: 3px solid transparent; 
+    box-shadow: none; 
+    transition: all 0.4s ease; 
+    cursor: pointer; 
+}
+
+.future-cta-section .cta-banner .cta-value {
+   
+    text-shadow: none; 
+    transition: text-shadow 0.4s ease;
+}
+
+
+.future-cta-section .cta-banner:hover {
+    border-color: #ff0000; 
+    box-shadow: 0 0 40px rgba(255, 0, 0, 0.5), 0 0 10px rgba(255, 0, 0, 0.3) inset; 
+    transform: scale(1.01); 
+}
+
+
+.future-cta-section .cta-banner:hover .cta-value {
+    text-shadow: 0 0 10px rgba(138, 43, 226, 0.7);
+}

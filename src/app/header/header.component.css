@@ -1,8 +1,4 @@
-/* Valores Padrão Neon */
-/* Neon Blue: #00BFFF */
-/* Neon Purple: #8A2BE2 */
 
-/* --- Centralização da Navbar --- */
 .navbar-ordago {
     /* Garante que a barra superior ocupe toda a largura */
     width: 100%;
@@ -42,7 +38,7 @@
 .hoverable:active, 
 .hoverable:focus {
     transform: translateY(-5px);
-    color: #00BFFF; /* Neon Blue no hover */
+    color: #ff0000; /* Neon Blue no hover */
 }
 
 /* --- Efeito de Sombra (Chão) no Hover (Mantido do seu código) --- */

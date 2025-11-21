@@ -1,75 +1,52 @@
-/* .carousel-inner{
-    width: 900px;
-    height: 700px;
-    border-radius: 100px;
-} */
-/* --- 1. Centralização do Carrossel --- */
+
 .carousel-section-container {
     padding: 80px 0;
     width: 100%;
-    /* Usa Flexbox para centralizar o item interno */
     display: flex; 
-    justify-content: center; /* Centraliza horizontalmente */
+    justify-content: center; 
     align-items: center;
-    background-color: #0A0A10; /* Fundo escuro */
+    background-color: #0A0A10; 
 }
 
-/* --- 2. Efeito de Tela de TV (Monitor Futurista) --- */
+
 .tv-frame-effect {
-    /* Define a largura máxima e altura (mantidas) */
     max-width: 900px; 
     height: 700px;
     margin: 0 auto; 
     overflow: hidden; 
     border-radius: 100px; 
-    
-    /* 1. ESTADO INICIAL (APAGADO) */
-    /* Removemos o border e o box-shadow daqui, mas mantemos uma borda escura para a forma */
-    border: 3px solid rgba(0, 191, 255, 0.1); /* Borda muito sutil (quase preta) */
+    border: 3px solid rgba(0, 191, 255, 0.1); 
     box-shadow: none;
-    
-    /* Adicionamos a transição suave */
     transition: all 0.4s ease-in-out; 
 }
 
-/* 2. ESTADO HOVER (ACENDER O LED NEON) */
+
 .tv-frame-effect:hover {
-    /* Ativa a borda neon (LED azul) */
-    border: 3px solid #00BFFF; 
-    
-    /* Ativa o brilho neon intenso */
-    box-shadow: 0 0 40px rgba(0, 180, 255, 0.9); 
+    border: 3px solid #ff0000; 
+    box-shadow: 0 0 40px  rgba(255, 0, 0, 0.9); 
 }
 
-/* --- Ajuste no Tamanho do Inner (Importante) --- */
-/*
-Você colocou width: 1500px aqui, mas seu max-width é 900px, o que vai quebrar o layout. 
-A área interna deve ser 100% da área externa (900px).
-*/
+
 .carousel-inner {
     width: 1500px;
     height: 100%;
 }
-/* ... o resto do seu CSS permanece o mesmo ... */
 
-/* As imagens devem ocupar 100% do espaço da área interna */
 .carousel-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Garante que a imagem cubra toda a área sem distorção */
+    object-fit: cover; 
 }
 
-/* Estilo para os controles (setas) do carrossel */
+
 .carousel-control-prev,
-.carousel-control-next {
-    /* Ajusta a cor e o tamanho dos botões se necessário */
+.carousel-control-next { 
     width: 5%;
     opacity: 0.8;
 }
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    /* Cor do ícone de navegação */
     filter: drop-shadow(0 0 5px #00BFFF);
 }
 
