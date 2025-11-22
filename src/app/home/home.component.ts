@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common'; // Para *ngFor e *ngIf
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import * as ScrollReveal from 'scrollreveal'; 
 
 interface HistoryItem {
   id: number;
   header: string;
   icon: string;
   content: string;
-  isOpen: boolean; // Propriedade que controlará o estado (aberto/fechado)
+  isOpen: boolean; 
 }
 
 @Component({
@@ -15,15 +16,17 @@ interface HistoryItem {
   standalone: true,
   imports: [
     CommonModule, 
-    RouterLink // Manter se você usar links no componente
-    // Removemos AccordionModule
+    RouterLink 
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit { 
 
-  // Array que armazena os dados da história da empresa e o estado de abertura
+  // Variável para a instância do ScrollReveal (usando 'any' para evitar erros de tipagem)
+  sr: any;
+
+  // Array que armazena os dados da história da empresa
   historyData: HistoryItem[] = [
     {
       id: 1,
@@ -51,18 +54,52 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    // Inicializa o ScrollReveal
+    this.sr = (ScrollReveal as any)(); 
+  }
+
+  // Aplica as animações de rolagem quando o DOM estiver pronto
+  ngAfterViewInit(): void {
+    if (this.sr) {
+        
+        // Configuração base para o efeito futurista
+        const baseConfig = {
+            duration: 1200,
+            easing: 'cubic-bezier(0.6, 0.2, 0.1, 1)',
+            scale: 0.95
+        };
+
+        // Card 1 (A Visão): Vindo de CIMA/ESQUERDA
+        this.sr.reveal('.card-pos-1', {
+            ...baseConfig,
+            origin: 'top',
+            distance: '80px',
+            delay: 200 
+        });
+
+        // Card 2 (Missão): Vindo da DIREITA
+        this.sr.reveal('.card-pos-2', {
+            ...baseConfig,
+            origin: 'right',
+            distance: '100px',
+            delay: 400 
+        });
+        
+        // Card 3 (Futuro): Vindo de BAIXO (efeito mais dramático)
+        this.sr.reveal('.card-pos-3', {
+            ...baseConfig,
+            origin: 'bottom',
+            distance: '120px',
+            duration: 1800,
+            delay: 600,
+            rotate: { x: 0, y: 0, z: 2 },
+            reset: false 
+        });
+    }
   }
 
   // Método para alternar o estado de abertura/fechamento
   togglePanel(item: HistoryItem): void {
     item.isOpen = !item.isOpen;
-    // Se você quiser que apenas um painel abra por vez, adicione:
-    /*
-    this.historyData.forEach(i => {
-      if (i.id !== item.id) {
-        i.isOpen = false;
-      }
-    });
-    */
   }
 }
