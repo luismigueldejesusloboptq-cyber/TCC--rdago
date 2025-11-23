@@ -4,85 +4,142 @@ body {
   background: #f5f5f5;
 }
 
-/* Container principal */
-.main-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  padding: 20px;
+/* Container que abriga a logo e o conteúdo */
+.interactive-history {
+    display: flex;
+    flex-direction: column; /* Começa com a logo e o texto empilhados */
+    align-items: center;
+    width: 100%;
+    max-width: 900px; /* Limita a largura para melhor leitura */
+    margin: 40px auto 60px; /* Centraliza entre a seção anterior e os cards */
+    padding: 30px;
+    background: #0A0A10; /* Fundo escuro para contrastar e parecer um bloco único */
+    color: #f5f5f5;
+    border-radius: 18px;
+    box-shadow: 0 5px 30px rgba(0, 191, 255, 0.2);
+    overflow: hidden; /* Importante para o efeito de transição de altura */
+    transition: all 0.5s ease-in-out; /* Transição suave para tudo */
 }
 
-/* LOGO + HISTÓRIA */
-.about-section {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 60px 20px;
-  margin-bottom: 40px;
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 1s ease, transform 1s ease;
+/* Área da Logo/Gatilho */
+.logo-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer; /* Indica que é interativo */
+    padding-bottom: 20px;
 }
 
-.about-section.visible {
-  opacity: 1;
-  transform: translateY(0);
+.ordago-logo {
+    width: 150px;
+    height: auto;
+    transition: transform 0.3s ease;
 }
 
-.logo-area img {
-  width: 200px;
-  height: auto;
+.title-trigger {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #00BFFF;
+    margin-top: 15px;
+    transition: opacity 0.3s ease;
 }
 
-.text-area {
-  margin-left: 40px;
-  max-width: 450px;
-  font-size: 18px;
-  line-height: 1.6;
+/* Conteúdo da História (Oculto por Padrão) */
+.history-content {
+    /* Estado inicial OCULTO */
+    max-height: 0; /* Altura 0 para esconder */
+    opacity: 0; /* Opacidade 0 para esconder o texto */
+    padding: 0 20px; /* Padding interno */
+    text-align: center;
+    transition: max-height 0.8s ease-in-out, opacity 0.5s ease 0.3s; /* Transições suaves */
+}
+
+.history-content h3 {
+    color: #8A2BE2; /* Destaque na cor secundária */
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+}
+
+/* REVELAÇÃO: Quando o usuário passa o mouse sobre a seção */
+.interactive-history:hover .history-content {
+    /* Estado final REVELADO */
+    max-height: 500px; /* Um valor grande o suficiente para acomodar o texto */
+    opacity: 1; /* Torna o texto visível */
+    padding: 20px 20px 0; /* Adiciona padding para o texto revelado */
+}
+
+/* Efeito adicional no hover para feedback visual */
+.interactive-history:hover .ordago-logo {
+    transform: scale(1.05);
+}
+
+/* Opcional: Esconde o texto gatilho após a revelação */
+.interactive-history:hover .title-trigger {
+    opacity: 0;
 }
 
 /* CARDS */
 .cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  width: 100%;
-  max-width: 1100px;
-  padding: 20px;
+    display: grid;
+    /* CHAVE 1: Ajusta o minmax para um tamanho menor (220px) para melhor responsividade em 4 colunas */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    /* CHAVE 2: Garante que o container esteja centralizado na página */
+    margin: 0 auto 40px; 
+    
+    gap: 30px; /* Aumentei o espaçamento para melhor visualização */
+    width: 100%;
+    max-width: 1100px;
+    padding: 20px;
 }
 
 .card {
-  background: white;
-  border-radius: 18px;
-  padding: 25px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  transition: 0.3s ease;
+    /* CHAVE 3: Usa Flexbox para garantir que todos os cards na mesma linha tenham a mesma altura */
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+    
+    /* Novo Estilo: Fundo mais escuro para um visual mais futurista (opcional) */
+    background: #1c1c2b; 
+    color: #f5f5f5; 
+    
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra mais escura */
+    transition: 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 191, 255, 0.2); /* Sombra com cor de destaque */
 }
 
 .emoji {
-  font-size: 40px;
-  margin-bottom: 10px;
+    font-size: 40px;
+    margin-bottom: 10px;
+    text-align: center; /* Centraliza emojis e ícones dentro do card */
+}
+
+/* CHAVE 4: Centraliza e padroniza o tamanho dos Ícones PNG */
+.emoji img {
+    width: 40px; /* Alterei de 50px/40px para 40px/40px para consistência */
+    height: 40px;
+    display: block;
+    margin: 0 auto; /* Centraliza a imagem no container .emoji */
 }
 
 .card-title {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center; /* Centraliza o título */
 }
 
 .card-text {
-  font-size: 16px;
-  line-height: 1.5;
+    font-size: 16px;
+    line-height: 1.5;
+    /* CHAVE 5: Garante que o texto ocupe o espaço restante para empurrar o título para o topo */
+    flex-grow: 1; 
+    text-align: center;
 }

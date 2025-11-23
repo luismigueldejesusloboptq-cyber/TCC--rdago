@@ -79,6 +79,8 @@
     color: white;
     text-align: center;
     height: auto;
+    position: relative;
+
 }
 
 .future-title {
@@ -232,4 +234,89 @@
 }
 
 
+.container-wats,
+.container-insta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white; 
+    cursor: pointer;
+    
+    position: absolute;
+    top: 50%; 
+    transform: translateY(-50%); 
+    z-index: 10; 
+   
+}
 
+
+.container-wats {
+    left: 80px; 
+}
+
+.container-insta {
+    right: 80px; 
+    padding-right: 20px;
+}
+
+
+.logo-wats,
+.logo-insta {
+    width: 100px;  
+    height: 100px;
+    transition: transform 0.3s ease; 
+    transform-origin: 50% 50%; 
+}
+
+
+.logo-wats {
+    animation: shake-whatsapp 4s infinite; 
+}
+
+.container-wats:hover .logo-wats {
+    transform: scale(1.1) rotate(0deg); 
+    animation: none; 
+}
+
+
+.container-insta:hover .logo-insta {
+    transform: scale(1.1) rotate(5deg); 
+}
+
+
+.container-wats h3 {
+    font-size: 0.9rem;
+    color: #ffffff; 
+    margin-top: 5px;
+    padding-left: 20px;
+  
+}
+
+
+@keyframes shake-whatsapp {
+    0%, 100% { transform: rotate(0deg); }
+    10% { transform: rotate(-5deg); }
+    20% { transform: rotate(5deg); }
+    30% { transform: rotate(-5deg); }
+    40% { transform: rotate(5deg); }
+    50% { transform: rotate(0deg); } 
+    75% { transform: rotate(0deg); } 
+}
+
+
+
+.LGPD {
+    width: 100%;
+    margin-top: 50px; 
+    padding-top: 20px;
+    text-align: center;
+    position: relative; 
+}
+
+.LGPD h4 {
+    font-size: 0.85rem;
+    color: #909090;
+    margin: 0;
+}
