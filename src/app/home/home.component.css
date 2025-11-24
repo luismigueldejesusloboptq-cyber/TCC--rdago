@@ -4,80 +4,234 @@ body {
   background: #f5f5f5;
 }
 
-/* Container que abriga a logo e o conteúdo */
-.interactive-history {
+.history-two-columns {
     display: flex;
-    flex-direction: column; /* Começa com a logo e o texto empilhados */
+    flex-direction: row; /* CHAVE: Logo e Texto lado a lado no desktop */
+    justify-content: space-between;
     align-items: center;
+    
     width: 100%;
-    max-width: 900px; /* Limita a largura para melhor leitura */
-    margin: 40px auto 60px; /* Centraliza entre a seção anterior e os cards */
-    padding: 30px;
-    background: #0A0A10; /* Fundo escuro para contrastar e parecer um bloco único */
-    color: #f5f5f5;
+    max-width: 1200px; /* Largura maior para melhor visualização lado a lado */
+    margin: 80px auto; 
+    padding: 40px;
+    
+    background: #0A0A10; /* Fundo sutilmente escuro */
     border-radius: 18px;
-    box-shadow: 0 5px 30px rgba(0, 191, 255, 0.2);
-    overflow: hidden; /* Importante para o efeito de transição de altura */
-    transition: all 0.5s ease-in-out; /* Transição suave para tudo */
+    border: 1px solid rgba(0, 191, 255, 0.2); /* Borda sutil */
+    box-shadow: 0 0 30px rgba(0, 191, 255, 0.1);
 }
 
-/* Área da Logo/Gatilho */
-.logo-area {
+/* 2. COLUNA DA LOGO (ESQUERDA) */
+.logo-area-v2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    cursor: pointer; /* Indica que é interativo */
-    padding-bottom: 20px;
+    padding-right: 40px;
+    /* CHAVE: A logo ocupa 40% da largura no desktop */
+    flex: 0 0 40%; 
+    text-align: center;
 }
 
-.ordago-logo {
-    width: 150px;
+.ordago-logo-v2 {
+    width: 220px; /* Logo maior e mais impactante */
     height: auto;
+    filter: drop-shadow(0 0 20px rgba(0, 191, 255, 0.7)); /* Efeito Neon Forte */
+}
+
+.company-slogan {
+    font-size: 1.8rem;
+    color: #8A2BE2; /* Destaque na cor secundária */
+    margin-top: 15px;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+/* 3. COLUNA DO TEXTO (DIREITA) */
+.text-area-v2 {
+    /* CHAVE: O texto ocupa 60% da largura no desktop */
+    flex: 1; /* Ocupa o restante do espaço */
+    padding-left: 20px;
+    border-left: 2px solid rgba(0, 191, 255, 0.3); /* Linha divisória sutil */
+}
+
+.text-area-v2 h3 {
+    font-size: 2rem;
+    color: #00BFFF;
+    margin-bottom: 20px;
+}
+
+.text-area-v2 p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #b0b0d0;
+}
+
+/* 4. ÍCONES DAS BANDEIRAS (RESERVADO) */
+.global-flags-container {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Garante que as bandeiras quebrem a linha se houver muitas */
+    gap: 15px;
+}
+
+.global-flags-container h4 {
+    font-size: 1rem;
+    color: #f5f5f5;
+    margin: 0;
+    margin-right: 15px;
+}
+
+.flag-icon-placeholder {
+    width: 40px;  /* Tamanho ideal para ícones de bandeira */
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden; /* Garante que a imagem da bandeira fique redonda/limpa */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
     transition: transform 0.3s ease;
 }
 
-.title-trigger {
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: #00BFFF;
-    margin-top: 15px;
-    transition: opacity 0.3s ease;
+.flag-icon-placeholder:hover {
+    transform: scale(1.1);
 }
 
-/* Conteúdo da História (Oculto por Padrão) */
-.history-content {
-    /* Estado inicial OCULTO */
-    max-height: 0; /* Altura 0 para esconder */
-    opacity: 0; /* Opacidade 0 para esconder o texto */
-    padding: 0 20px; /* Padding interno */
-    text-align: center;
-    transition: max-height 0.8s ease-in-out, opacity 0.5s ease 0.3s; /* Transições suaves */
+.flag-icon {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover; /* Garante que a imagem preencha o container */
 }
 
-.history-content h3 {
-    color: #8A2BE2; /* Destaque na cor secundária */
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 10px;
+/* TOOLTIP DAS BANDEIRAS */
+.flag-container {
+    position: relative;
+    display: inline-block;
 }
 
-/* REVELAÇÃO: Quando o usuário passa o mouse sobre a seção */
-.interactive-history:hover .history-content {
-    /* Estado final REVELADO */
-    max-height: 500px; /* Um valor grande o suficiente para acomodar o texto */
-    opacity: 1; /* Torna o texto visível */
-    padding: 20px 20px 0; /* Adiciona padding para o texto revelado */
-}
+.flag-tooltip {
+    position: absolute;
+    bottom: 55px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 260px;
 
-/* Efeito adicional no hover para feedback visual */
-.interactive-history:hover .ordago-logo {
-    transform: scale(1.05);
-}
+    background: rgba(0, 0, 0, 0.85);
+    color: #00eaff;
+    border: 1px solid rgba(0, 191, 255, 0.4);
 
-/* Opcional: Esconde o texto gatilho após a revelação */
-.interactive-history:hover .title-trigger {
+    padding: 12px 15px;
+    border-radius: 10px;
+
+    font-size: 0.9rem;
+    line-height: 1.4;
+
     opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.35);
+    backdrop-filter: blur(5px);
+
+    z-index: 20;
+}
+
+.flag-tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.85) transparent transparent transparent;
+}
+
+/* Mostrar tooltip ao passar mouse */
+.flag-container:hover .flag-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Slide-up suave */
+.flag-container:hover .flag-tooltip {
+    transform: translateX(-50%) translateY(-5px);
+}
+
+.text-area-v2 {
+    flex: 1;
+    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+}
+.history-title {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #f5f5f5;
+}
+ .global-flags-container {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.flag-arrow {
+    width: 22px;
+    height: 22px;
+    opacity: 0.7;
+    transform: translateY(1px);
+    transition: 0.25s ease;
+}
+
+.flag-container:hover .flag-arrow {
+    opacity: 1;
+    transform: translateY(1px) translateX(3px);
+}
+
+.flag-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+/* ---------------------------------- */
+/* 5. RESPONSIVIDADE (Telas Menores) */
+/* ---------------------------------- */
+
+@media (max-width: 900px) {
+    .history-two-columns {
+        /* CHAVE: Força as colunas a se empilharem em telas menores */
+        flex-direction: column; 
+        padding: 30px 20px;
+    }
+    
+    .logo-area-v2 {
+        padding-right: 0;
+        padding-bottom: 30px;
+        border-bottom: 1px solid rgba(0, 191, 255, 0.3); /* Linha divisória no mobile */
+        margin-bottom: 30px;
+    }
+
+
+    .text-area-v2 {
+        padding-left: 0;
+        border-left: none;
+        text-align: center;
+    }
+    
+    .text-area-v2 p {
+        text-align: left; /* Mantém o texto justificado para melhor leitura */
+    }
+
+    .global-flags-container {
+        justify-content: center;
+    }
+
+
 }
 
 /* CARDS */

@@ -1,52 +1,34 @@
-.carousel-section-container {
-    padding: 80px 0;
+.ticker-container {
     width: 100%;
-    display: flex; 
-    justify-content: center; 
+    overflow: hidden;
+    height: 60px; 
+    display: flex;
     align-items: center;
-    background-color: #0A0A10; 
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-
-.tv-frame-effect {
-    max-width: 900px; 
-    height: 700px;
-    margin: 0 auto; 
-    overflow: hidden; 
-    border-radius: 100px; 
-    border: 3px solid rgba(0, 191, 255, 0.1); 
-    box-shadow: none;
-    transition: all 0.4s ease-in-out; 
+.ticker-track {
+    display: flex;
+    gap: 60px;
+    animation: ticker 10s linear infinite; 
 }
 
-
-.tv-frame-effect:hover {
-    border: 3px solid #ff0000; 
-    box-shadow: 0 0 40px  rgba(255, 0, 0, 0.9); 
+.ticker-icon {
+    height: 40px;      
+    width: auto;
+    opacity: 0.9;
+    transition: 0.3s;
 }
 
-
-.carousel-inner {
-    width: 1500px;
-    height: 100%;
+.ticker-icon:hover {
+    opacity: 1;
+    transform: scale(1.1);
 }
 
-.carousel-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-}
-
-
-.carousel-control-prev,
-.carousel-control-next { 
-    width: 5%;
-    opacity: 0.8;
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    filter: drop-shadow(0 0 5px #00BFFF);
+@keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); } 
 }
 
 

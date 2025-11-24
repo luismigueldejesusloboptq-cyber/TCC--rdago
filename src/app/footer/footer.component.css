@@ -222,9 +222,8 @@
 }
 
 
-.future-cta-section .cta-banner:hover {
-    border-color: #ff0000; 
-    box-shadow: 0 0 40px rgba(255, 0, 0, 0.5), 0 0 10px rgba(255, 0, 0, 0.3) inset; 
+.future-cta-section .cta-banner:hover { 
+   box-shadow: 0 8px 24px rgba(0, 191, 255, 0.5);
     transform: scale(1.01); 
 }
 
