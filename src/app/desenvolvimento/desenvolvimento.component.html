@@ -1,23 +1,386 @@
+<!-- desenvolvimento.component.html -->
+<section class="dev-page">
 
-<div class="ticker-containe">
-    <div class="ticker-track">
-       
-        <img src="programing.png" class="ticker-icon" />
-        <img src="html-5.png" class="ticker-icon" />
-        <img src="css-3.png" class="ticker-icon" />
-        <img src="java-script.png" class="ticker-icon" />
-        <img src="python.png" class="ticker-icon" />
-        <img src="java.png" class="ticker-icon" />
-    
-     
-        <!-- <img src="programing.png" class="ticker-icon" />
-        <img src="html-5.png" class="ticker-icon" />
-        <img src="css-3.png" class="ticker-icon" />
-        <img src="java-script.png" class="ticker-icon" />
-        <img src="python.png" class="ticker-icon" />
-        <img src="java.png" class="ticker-icon" /> -->
-        
-        
+  <!-- HERO -->
+  <section class="hero">
+  <div class="hero-left">
+    <h1>
+      Desenvolvimento<br>
+      <span>de Sites & Sistemas</span>
+    </h1>
+
+    <p class="hero-sub">
+      Transformamos suas ideias em plataformas profissionais, rápidas,
+      seguras e projetadas para escalar.
+    </p>
+
+    <div class="hero-ctas">
+      <button class="btn primary">Começar Agora</button>
+      <button class="btn outline">Ver Portfólio</button>
     </div>
-</div>
+  </div>
 
+  <div class="hero-right">
+    <div class="mockup-3d">
+      <img src="assets/mockup.png" alt="Mockup do site">
+    </div>
+  </div>
+</section>
+
+
+  <!-- TIMELINE -->
+  <section class="timeline-section">
+  <h2 class="timeline-title">Linha do Tempo de Desenvolvimento</h2>
+
+  <div class="timeline">
+
+    <div class="timeline-item left">
+      <div class="timeline-content">
+        <h3>1. Ideação</h3>
+        <p>Estruturação da proposta, definição das necessidades e criação do conceito inicial.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item right">
+      <div class="timeline-content">
+        <h3>2. Design Futurista</h3>
+        <p>Construção da identidade visual, UI/UX e estética holográfica do projeto.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item left">
+      <div class="timeline-content">
+        <h3>3. Desenvolvimento</h3>
+        <p>Implementação do front-end, backend, integrações e automações.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item right">
+      <div class="timeline-content">
+        <h3>4. Integração com Chatbot</h3>
+        <p>Conexão com n8n, criação dos fluxos e inteligência das conversas.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item left">
+      <div class="timeline-content">
+        <h3>5. Deploy Final</h3>
+        <p>Otimização, publicação e monitoramento contínuo.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- TECHNOLOGIES -->
+  <section class="tech-section">
+  <h2 class="tech-title">Tecnologias Utilizadas</h2>
+
+  <div class="tech-grid">
+
+    <div class="tech-card">
+      <i class="pi pi-code tech-icon"></i>
+      <h3>Angular</h3>
+      <p>Framework para criação de interfaces modernas e escaláveis.</p>
+    </div>
+
+    <div class="tech-card">
+      <i class="pi pi-sitemap tech-icon"></i>
+      <h3>Node.js</h3>
+      <p>Backend rápido e eficiente para APIs e integrações.</p>
+    </div>
+
+    <div class="tech-card">
+      <i class="pi pi-cloud tech-icon"></i>
+      <h3>n8n</h3>
+      <p>Automação avançada e integração com o chatbot.</p>
+    </div>
+
+    <div class="tech-card">
+      <i class="pi pi-brain tech-icon"></i>
+      <h3>IA / LLM</h3>
+      <p>Inteligência de conversação evoluída integrada ao sistema.</p>
+    </div>
+
+    <div class="tech-card">
+      <i class="pi pi-server tech-icon"></i>
+      <h3>Banco de Dados</h3>
+      <p>Armazenamento seguro e otimizado para dados.</p>
+    </div>
+
+    <div class="tech-card">
+      <i class="pi pi-shield tech-icon"></i>
+      <h3>Segurança</h3>
+      <p>Criptografia, proteção e melhores práticas.</p>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- CHATBOT AREA -->
+  <section class="chatbot-area" role="region" aria-label="Assistente IA">
+    <div class="chat-wrapper">
+      <div class="chat-info">
+        <h3>Experimente nossa IA</h3>
+        <p>Fale agora com o assistente inteligente da Órdago.</p>
+        <button class="btn chat-btn" type="button" (click)="toggleChat()">
+          {{ chatOpen ? 'Fechar assistente' : 'Abrir Assistente' }}
+        </button>
+      </div>
+
+      <div class="chat-embed" *ngIf="chatOpen">
+        <!-- Se tiver um iframe do n8n, substitua a tag abaixo -->
+        <!-- Exemplo de iframe comentado:
+        <iframe src="https://seu-webhook-ou-widget" frameborder="0" width="100%" height="420"></iframe>
+        -->
+        <div class="chat-sim" aria-live="polite">
+          <div class="messages">
+            <div class="message bot">Olá! Como posso ajudar com seu projeto?</div>
+          </div>
+
+          <div class="chat-input">
+            <input type="text" placeholder="Digite sua mensagem..." aria-label="Mensagem do usuário" />
+            <button class="btn" type="button">Enviar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services-3d-section">
+
+  <h2 class="section-title">Nossos Serviços</h2>
+
+  <div class="services-3d-container">
+
+    <div class="service-card-3d" (mousemove)="tilt($event, card1)" (mouseleave)="resetTilt(card1)" #card1>
+      <i class="pi pi-globe card-icon"></i>
+      <h3>Criação de Sites</h3>
+      <p>Sites rápidos, modernos, escaláveis e totalmente responsivos.</p>
+    </div>
+
+    <div class="service-card-3d" (mousemove)="tilt($event, card2)" (mouseleave)="resetTilt(card2)" #card2>
+      <i class="pi pi-mobile card-icon"></i>
+      <h3>Landing Pages</h3>
+      <p>Conversão máxima com design focado em performance.</p>
+    </div>
+
+    <div class="service-card-3d" (mousemove)="tilt($event, card3)" (mouseleave)="resetTilt(card3)" #card3>
+      <i class="pi pi-sitemap card-icon"></i>
+      <h3>Sistemas Web</h3>
+      <p>Painéis, dashboards, automações e soluções para empresas.</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+  <!-- PORTFOLIO -->
+  <section class="portfolio-section">
+
+  <h2 class="portfolio-title">Portfólio Holográfico</h2>
+
+  <div class="portfolio-grid">
+
+    <div class="portfolio-card">
+      <div class="holo-layer"></div>
+      <img src="assets/projeto1.jpg" alt="Projeto 1">
+      <h3>Dashboard Administrativo</h3>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="holo-layer"></div>
+      <img src="assets/projeto2.jpg" alt="Projeto 2">
+      <h3>Landing Page High Conversion</h3>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="holo-layer"></div>
+      <img src="assets/projeto3.jpg" alt="Projeto 3">
+      <h3>E-commerce Personalizado</h3>
+    </div>
+
+  </div>
+
+</section>
+
+  <!-- depoimento-->
+  <section class="testimonials-section" aria-label="Depoimentos de clientes">
+  <div class="testimonials-inner">
+    <h2 class="testimonials-title">O que nossos clientes dizem</h2>
+    <p class="testimonials-sub">Resultados reais. Feedback verdadeiro.</p>
+
+    <div class="testimonials-grid">
+      <article class="testimonial-card" *ngFor="let t of testimonials; let i = index" role="article">
+        <div class="testimonial-top">
+          <div class="avatar" aria-hidden="true">
+            <img [src]="t.avatar || 'assets/avatar-placeholder.png'" [alt]="t.name">
+          </div>
+          <div class="meta">
+            <strong class="name">{{ t.name }}</strong>
+            <span class="role">{{ t.role }}</span>
+            <div class="stars" aria-hidden="true">
+              <span *ngFor="let s of [1,2,3,4,5]" class="star" [class.filled]="s <= (t.rating || 5)">★</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="testimonial-text">“{{ t.text }}”</p>
+
+        <footer class="testimonial-footer">
+          <small class="date">{{ t.date }}</small>
+        </footer>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- priecing -->
+<section class="pricing-section" id="planos">
+  <div class="pricing-inner">
+
+    <h2 class="pricing-title">Planos e Soluções</h2>
+    <p class="pricing-sub">Escolha o nível ideal para o seu projeto.</p>
+
+    <div class="pricing-grid">
+
+      <!-- PLANO 1 -->
+      <div class="pricing-card">
+        <h3 class="plan-name">Essencial</h3>
+        <p class="plan-desc">Para projetos que precisam de presença profissional.</p>
+        
+        <div class="price">
+          <span class="currency">R$</span>
+          <span class="amount">1.500</span>
+        </div>
+
+        <ul class="plan-features">
+          <li>Site profissional</li>
+          <li>Design responsivo</li>
+          <li>Integração WhatsApp</li>
+          <li>SEO básico</li>
+        </ul>
+
+        <button class="plan-button" (click)="requestQuote('essencial')">Solicitar</button>
+      </div>
+
+      <!-- PLANO 2 (DESTAQUE) -->
+      <div class="pricing-card featured">
+        <div class="featured-tag">Mais Popular</div>
+
+        <h3 class="plan-name">Avançado</h3>
+        <p class="plan-desc">Para empresas que precisam de performance e automação.</p>
+        
+        <div class="price">
+          <span class="currency">R$</span>
+          <span class="amount">3.900</span>
+        </div>
+
+        <ul class="plan-features">
+          <li>Site completo + painel admin</li>
+          <li>Automação (n8n)</li>
+          <li>Hospedagem otimizada</li>
+          <li>SEO avançado</li>
+          <li>Suporte prioritário</li>
+        </ul>
+
+        <button class="plan-button featured-btn" (click)="requestQuote('avancado')">Solicitar</button>
+      </div>
+
+      <!-- PLANO 3 -->
+      <div class="pricing-card">
+        <h3 class="plan-name">Enterprise</h3>
+        <p class="plan-desc">Para operações que precisam de sistemas escaláveis.</p>
+        
+        <div class="price">
+          <span class="currency">R$</span>
+          <span class="amount">7.900</span>
+        </div>
+
+        <ul class="plan-features">
+          <li>Sistema completo</li>
+          <li>Infra AWS / GCP</li>
+          <li>APIs personalizadas</li>
+          <li>Dashboard avançado</li>
+          <li>Suporte 24/7</li>
+        </ul>
+
+        <button class="plan-button" (click)="requestQuote('enterprise')">Solicitar</button>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- faq ajeitar porque nao esta abrindo as perguntas-->
+  <section id="faq" class="w-full py-20 bg-neutral-950 text-white">
+  <div class="max-w-5xl mx-auto px-6">
+
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
+        Perguntas Frequentes
+      </h2>
+      <p class="text-neutral-400 text-lg">
+        Tudo o que você precisa saber antes de começar.
+      </p>
+    </div>
+
+    <div class="space-y-4">
+      <div 
+        *ngFor="let f of faqs; let i = index" 
+        class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6"
+      >
+        <button 
+          (click)="toggleFAQ(i)"
+          class="faq-toggle flex justify-between w-full text-left text-xl font-medium"
+        >
+          <span>{{ f.question }}</span>
+          <i 
+            class="pi pi-chevron-down transition-transform duration-300"
+            [class.rotate-180]="f.open"
+          ></i>
+        </button>
+
+        <div 
+          class="faq-content mt-4 text-neutral-400 overflow-hidden transition-all duration-300"
+          [style.maxHeight]="f.open ? '500px' : '0px'"
+        >
+          <p class="pt-2">{{ f.answer }}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- cta final -->
+ <section id="cta-final">
+  <div class="cta-bg"></div>
+
+  <div class="cta-content">
+    <h2>Pronto para elevar seu projeto ao próximo nível?</h2>
+
+    <p>
+      Transformamos ideias em experiências digitais poderosas.
+      Fale agora mesmo com a Órdago e dê o próximo passo no futuro.
+    </p>
+
+    <button class="cta-primary" (click)="requestQuote()">
+      Quero começar agora
+    </button>
+
+    <button class="cta-secondary" (click)="toggleChat()">
+      Tirar dúvidas no Chatbot
+    </button>
+  </div>
+</section>
+
+
+</section>
