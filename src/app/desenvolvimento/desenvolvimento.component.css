@@ -53,6 +53,10 @@
   justify-content: center;
 }
 
+.gif{
+  width: 100%;
+}
+
 .mockup-3d {
   width: 420px;
   height: 260px;
