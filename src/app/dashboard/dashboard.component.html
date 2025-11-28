@@ -1,0 +1,33 @@
+<div class="dashboard-layout">
+    <div class="header-dashboard">
+        <h2>Dashboard Administrativo (Angular Nativo)</h2>
+        <button (click)="logout()" class="btn-logout">Sair</button>
+    </div>
+
+    <div class="carousel-container">
+        <h3>Últimas Campanhas</h3>
+        <div *ngFor="let image of images; index as i" class="slide" [class.active]="i === currentSlide">
+            <img [src]="image.src" alt="Campanha {{ i + 1 }}">
+            <div class="caption">{{ image.caption }}</div>
+        </div>
+    </div>
+
+    <div class="metrics-grid">
+        <div *ngFor="let metric of metrics" class="metric-card">
+            <h4>{{ metric.title }}</h4>
+            <p class="value">{{ metric.value }}</p>
+            <span class="change">{{ metric.change }}</span>
+        </div>
+    </div>
+    
+    <div class="chart-simulation-container">
+        <h3>Simulação de Gráfico de Barras (Vendas Mensais)</h3>
+        <div class="chart-bars">
+            <div class="bar" style="height: 70%;" title="Jan: 70%">Jan</div>
+            <div class="bar" style="height: 85%;" title="Fev: 85%">Fev</div>
+            <div class="bar" style="height: 60%;" title="Mar: 60%">Mar</div>
+            <div class="bar" style="height: 95%;" title="Abr: 95%">Abr</div>
+            <div class="bar" style="height: 75%;" title="Mai: 75%">Mai</div>
+        </div>
+    </div>
+</div>

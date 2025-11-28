@@ -319,3 +319,30 @@
     color: #909090;
     margin: 0;
 }
+
+/* Estilo básico para o rodapé */
+.main-footer {
+    background-color: #333;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    width: 100%;
+    /* Pode ser fixado na parte inferior, se desejar */
+}
+
+/* Estilo do botão de acesso Admin */
+.btn-admin-access {
+    display: inline-block;
+    padding: 8px 15px;
+    margin-top: 10px;
+    background-color: #ffc107; /* Amarelo/Laranja para destaque */
+    color: #333;
+    text-decoration: none; /* Remove sublinhado de link */
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-admin-access:hover {
+    background-color: #e0a800;
+}

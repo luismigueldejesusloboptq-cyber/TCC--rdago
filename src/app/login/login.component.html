@@ -1,0 +1,24 @@
+<div class="login-container"> <h2>Acesso Administrativo</h2>
+    <form (ngSubmit)="submitLogin()">
+        <label for="username">Usuário:</label>
+        <input 
+            type="text" 
+            id="username" 
+            name="username"
+            required
+            [(ngModel)]="username"
+        >
+        <label for="password">Senha:</label>
+        <input 
+            type="password" 
+            id="password" 
+            name="password"
+            required
+            [(ngModel)]="password" >
+        <div *ngIf="loginError" class="error-message">
+            Credenciais inválidas. 
+        </div>
+        
+        <button type="submit">Entrar</button>
+        </form>
+</div>

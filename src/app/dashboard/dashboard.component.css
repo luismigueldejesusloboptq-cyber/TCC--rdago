@@ -1,0 +1,52 @@
+/* Layout para Responsividade */
+.charts-section {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.chart-card {
+    width: 100%; /* Por padrão, ocupa a largura total */
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border-radius: 8px;
+}
+
+/* Garante que o container do Google Chart se ajuste */
+google-chart {
+    display: block;
+}
+
+/* Responsividade: Telas maiores (tablet e desktop) */
+@media (min-width: 768px) {
+    .chart-card {
+        width: 49%; /* Divide em duas colunas */
+    }
+}
+
+/* Estilo do Carousel */
+.carousel-section {
+    max-width: 100%;
+    margin: 20px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.pics-wrapper {
+    /* Altura fixa para evitar pulo no layout */
+    max-height: 400px; 
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pics-wrapper img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
