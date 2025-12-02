@@ -65,32 +65,6 @@ testimonials = [
   }
 ];
 
-faqs = [
-  {
-    question: "O chatbot funciona com qualquer backend?",
-    answer: "Sim, ele funciona com qualquer API REST, incluindo n8n, Firebase, Node, Python, PHP e muito mais.",
-    open: false
-  },
-  {
-    question: "Preciso pagar para usar o n8n?",
-    answer: "Não. O n8n pode ser usado gratuitamente em instalação local ou Docker.",
-    open: false
-  },
-  {
-    question: "O bot consegue aprender com meus prompts?",
-    answer: "Sim, você define o comportamento totalmente via fluxo no n8n, sem treinar modelo.",
-    open: false
-  },
-  {
-    question: "É seguro integrar no meu site?",
-    answer: "É seguro desde que você use autenticação no endpoint, limite tokens e esconda secrets em variáveis de ambiente.",
-    open: false
-  }
-  
-];
-toggleFAQ(index: number) {
-  this.faqs[index].open = !this.faqs[index].open;
-}
 
 // Chatbot state
 chatOpen = false;
