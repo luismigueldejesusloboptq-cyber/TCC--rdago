@@ -1,33 +1,93 @@
-<div class="dashboard-layout">
-    <div class="header-dashboard">
-        <h2>Dashboard Administrativo (Angular Nativo)</h2>
-        <button (click)="logout()" class="btn-logout">Sair</button>
-    </div>
+<div class="dashboard-shell">
 
-    <div class="carousel-container">
-        <h3>Últimas Campanhas</h3>
-        <div *ngFor="let image of images; index as i" class="slide" [class.active]="i === currentSlide">
-            <img [src]="image.src" alt="Campanha {{ i + 1 }}">
-            <div class="caption">{{ image.caption }}</div>
-        </div>
-    </div>
+  <!-- background canvas with subtle particles -->
+  <canvas #bgCanvas class="bg-canvas"></canvas>
 
-    <div class="metrics-grid">
-        <div *ngFor="let metric of metrics" class="metric-card">
-            <h4>{{ metric.title }}</h4>
-            <p class="value">{{ metric.value }}</p>
-            <span class="change">{{ metric.change }}</span>
-        </div>
+  <header class="topbar">
+    <div class="brand">Órdago</div>
+    <div class="controls">
+      <button class="icon-btn">🔍</button>
+      <button class="icon-btn">⚙️</button>
+      <button class="icon-btn logout" (click)="logout()">⎋</button>
     </div>
-    
-    <div class="chart-simulation-container">
-        <h3>Simulação de Gráfico de Barras (Vendas Mensais)</h3>
-        <div class="chart-bars">
-            <div class="bar" style="height: 70%;" title="Jan: 70%">Jan</div>
-            <div class="bar" style="height: 85%;" title="Fev: 85%">Fev</div>
-            <div class="bar" style="height: 60%;" title="Mar: 60%">Mar</div>
-            <div class="bar" style="height: 95%;" title="Abr: 95%">Abr</div>
-            <div class="bar" style="height: 75%;" title="Mai: 75%">Mai</div>
+  </header>
+
+  <main class="main-grid">
+    <!-- left column: KPIs + mini controls -->
+    <section class="left-col">
+      <div class="kpi-grid">
+        <div class="kpi-card" *ngFor="let m of metrics; index as i">
+          <div class="kpi-left">
+            <div class="kpi-icon">★</div>
+            <div class="kpi-text">
+              <div class="kpi-label">{{ m.label }}</div>
+              <div class="kpi-value">{{ m.formatted || m.value }}</div>
+            </div>
+          </div>
+          <canvas #spark class="spark-canvas"></canvas>
         </div>
-    </div>
+      </div>
+
+      <div class="control-card">
+        <h4>Quick Filters</h4>
+        <div class="filters">
+          <button class="chip">Últimos 7 dias</button>
+          <button class="chip">Últimos 30 dias</button>
+          <button class="chip active">Este Mês</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- center column: big charts -->
+    <section class="center-col">
+      <div class="panel glass">
+        <div class="panel-header">
+          <h3>Vendas Mensais</h3>
+          <div class="panel-actions">🔁</div>
+        </div>
+        <div class="panel-body">
+          <canvas #lineCanvas class="full-canvas"></canvas>
+        </div>
+      </div>
+
+      <div class="panel glass small">
+        <div class="panel-header">
+          <h3>Produtos</h3>
+        </div>
+        <div class="panel-body">
+          <canvas #barCanvas class="full-canvas"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- right column: details, table and CTA -->
+    <aside class="right-col">
+      <div class="panel glass">
+        <h4>Resumo Rápido</h4>
+        <ul class="summary">
+          <li><strong>Uptime</strong><span>99.92%</span></li>
+          <li><strong>Tickets</strong><span>12 abertos</span></li>
+          <li><strong>NPS</strong><span>78</span></li>
+        </ul>
+      </div>
+
+      <div class="panel glass">
+        <h4>Top Produtos</h4>
+        <table class="mini-table">
+          <thead><tr><th>Produto</th><th>Vendas</th></tr></thead>
+          <tbody>
+            <tr><td>XPTO</td><td>312</td></tr>
+            <tr><td>Y</td><td>277</td></tr>
+            <tr><td>Z</td><td>221</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="cta-card">
+        <h4>Explorar Insights</h4>
+        <p class="muted">Gere relatórios avançados e exporte em CSV/PDF.</p>
+        <button class="primary">Gerar relatório</button>
+      </div>
+    </aside>
+  </main>
 </div>
