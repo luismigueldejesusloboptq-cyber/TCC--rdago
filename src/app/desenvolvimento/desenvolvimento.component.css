@@ -1238,3 +1238,186 @@
     padding: 12px 28px;
   }
 }
+
+
+
+/* ============================
+   HERO FUTURISTA
+=============================== */
+
+.hero-future {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 6rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  background: radial-gradient(circle at 20% 20%, #0d0f1e, #05060d 80%);
+}
+
+/* Background animado */
+.hero-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.45;
+}
+
+/* Conteúdo principal */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+.glitch-title {
+  font-size: clamp(2.8rem, 4vw, 4rem);
+  font-weight: 900;
+  line-height: 1.1;
+  color: #fff;
+  text-shadow: 0 0 30px #5ac8ff70;
+}
+
+.glitch-title span {
+  color: #5ac8ff;
+}
+
+/* Descrição */
+.hero-desc {
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  max-width: 500px;
+  color: #d2d7e0;
+  line-height: 1.6;
+}
+
+/* CTA */
+.cta-row {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 1.2rem;
+}
+
+.btn-primary {
+  background: #5ac8ff;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: #000;
+  box-shadow: 0 0 15px #5ac8ff80;
+  transition: 0.2s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 0 25px #5ac8ff;
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 2px solid #5ac8ff;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  color: #5ac8ff;
+  font-weight: 700;
+  transition: 0.25s;
+}
+
+.btn-ghost:hover {
+  background: #5ac8ff20;
+  transform: translateY(-3px);
+}
+
+/* Holograma */
+.hero-hologram {
+  position: relative;
+  z-index: 2;
+  animation: float 6s ease-in-out infinite;
+}
+
+.hero-hologram img {
+  width: 450px;
+  filter: drop-shadow(0 0 40px #5ac8ff90);
+}
+
+/* Shapes futuristas */
+.shapes div {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.25;
+  z-index: 1;
+}
+
+.s1 {
+  width: 280px;
+  height: 280px;
+  background: #5ac8ff;
+  top: -60px;
+  right: 0;
+}
+
+.s2 {
+  width: 350px;
+  height: 350px;
+  background: #a855f7;
+  bottom: -100px;
+  left: -40px;
+}
+
+.s3 {
+  width: 200px;
+  height: 200px;
+  background: #00ffb2;
+  top: 40%;
+  right: 25%;
+}
+
+/* Flutuação suave */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-25px); }
+  100% { transform: translateY(0px); }
+}
+
+/* =======================
+   RESPONSIVO
+========================== */
+@media (max-width: 900px) {
+
+  .hero-future {
+    flex-direction: column;
+    text-align: center;
+    padding: 4rem 1.5rem;
+  }
+
+  .hero-hologram img {
+    width: 300px;
+    margin-top: 3rem;
+  }
+
+  .cta-row {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 550px) {
+  .glitch-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+  }
+
+  .btn-primary,
+  .btn-ghost {
+    padding: 0.8rem 1.4rem;
+    font-size: 1rem;
+  }
+}

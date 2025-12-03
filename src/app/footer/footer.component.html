@@ -1,45 +1,40 @@
-<section class="future-cta-section">
-    <div class="content-wrapper">
-        <!-- <h2 class="future-title">Pronto para o Futuro: Construído para Escalar.</h2> -->
-        
-        <!-- <div class="future-grid">
-            
-            <div class="future-item">
-                <i class="pi pi-shield card-icon"></i>
-                <h3>Arquitetura Inabalável</h3>
-                <p>Projetamos para suportar picos de tráfego, integrações complexas e milhões de usuários. Sua expansão nunca será limitada pelo seu código.</p>
-            </div>
 
-            <div class="future-item">
-                <i class="pi pi-cog card-icon"></i>
-                <h3>Tecnologia de Ponta</h3>
-                <p>Usamos as linguagens e frameworks mais recentes (Angular, Node, Python), garantindo que seu sistema não envelheça em seis meses. Investimento que dura.</p>
-            </div>
-            
-            <div class="future-item">
-                <i class="pi pi-database card-icon"></i>
-                <h3>Integração Total</h3>
-                <p>Seu sistema deve conversar com o mundo. Construímos APIs e integrações nativas para todos os seus softwares de gestão, marketing e vendas.</p>
-            </div>
-        </div> -->
 
-        <div class="cta-banner">
-            <h3 class="cta-headline">NÃO CONTRATE APENAS UM SERVIÇO.</h3>
-            <h2 class="cta-value">CONTRATE UMA FÁBRICA DE RESULTADOS.</h2> 
-            <button type="button" class="btn btn-primary btn-lg" routerLink="/desenvolvimento">Saiba Mais.</button>
+<!-- footer.component.html -->
+<footer class="organic-footer" aria-labelledby="footer-heading">
+    <!-- canvas de fundo (organic shapes + particles) -->
+    <canvas #bgCanvas class="bg-canvas" aria-hidden="true"></canvas>
+  
+    <div class="footer-inner">
+      <!-- Conteúdo principal -->
+      <div class="footer-left">
+        <p class="micro">NÃO CONTRATE APENAS UM SERVIÇO.</p>
+        <h1 id="footer-heading" class="title">CONTRATE UMA<br><span>FÁBRICA DE RESULTADOS.</span></h1>
+  
+        <div class="cta-row">
+          <button routerLink="/desenvolvimento" class="btn-primary" aria-label="Saiba mais sobre desenvolvimento">
+            Saiba Mais
+          </button>
         </div>
-    </div>
-    <div class="container-wats">
-        <img src="whatsapp.png" class="logo-wats" alt="logo-wats">
-        <h3>Suporte 24 horas.</h3>
-    </div>
-     <div class="container-insta">
-       <img src="instagram.png" class="logo-insta" alt="logo-insta"> 
-     </div>
-    <div class="LGPD">
-        <h4>© 2025 Órdago. Todos os direitos reservados. Em conformidade com a LGPD.</h4>
-    </div>
-        <a [routerLink]="['/admin/login']" class="btn-admin-access">
-            Acesso Administrativo
+      </div>
+  
+      <!-- Ações sociais (ícones) -->
+      <div class="footer-right" aria-hidden="false">
+        <a href="https://wa.me/55" class="icon-circle" title="WhatsApp - Suporte 24h">
+          <img src="whatsapp.png" alt="WhatsApp">
+          <span class="sr-only">WhatsApp</span>
         </a>
-</section>
+  
+        <a href="https://instagram.com" class="icon-circle" title="Instagram">
+          <img src="instagram.png" alt="Instagram">
+          <span class="sr-only">Instagram</span>
+        </a>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p class="copyright">© 2025 Órdago. Todos os direitos reservados. Em conformidade com a LGPD.</p>
+      <a routerLink="/admin/login" class="admin-access" aria-label="Acesso Administrativo">Acesso Administrativo</a>
+    </div>
+  </footer>
+  

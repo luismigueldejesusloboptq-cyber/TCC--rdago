@@ -1,76 +1,39 @@
-<!-- desenvolvimento.component.html -->
-<section class="dev-page">
+<!-- HERO FUTURISTA -->
+<section class="hero-future">
 
-  <!-- HERO -->
-  <section class="hero">
-  <div class="hero-left">
-    <h1>
-      Desenvolvimento<br>
-      <span>de Sites & Sistemas</span>
+  <!-- background holográfico -->
+  <canvas class="hero-canvas" id="heroCanvas"></canvas>
+
+  <div class="hero-content">
+    <h1 class="glitch-title">
+      Sites que <span>evoluem</span><br>
+      com o seu negócio
     </h1>
 
-    <p class="hero-sub">
-      Transformamos suas ideias em plataformas profissionais, rápidas,
-      seguras e projetadas para escalar.
+    <p class="hero-desc">
+      Construímos experiências digitais de alto impacto — rápidas, vivas, inteligentes
+      e preparadas para escalar sua empresa ao próximo nível.
     </p>
 
-    <div class="hero-ctas">
-      <button class="btn primary">Começar Agora</button>
-      <button class="btn outline">Ver Portfólio</button>
+    <div class="cta-row">
+      <button class="btn-primary">Quero um Site Premium</button>
+      <button class="btn-ghost">Ver Projetos</button>
     </div>
   </div>
 
-  <div class="hero-right">
-    <div class="mockup-3d">
-      <img  class="gif"  src="imagem-gif.gif" alt="Mockup do site">
-    </div>
+  <!-- mockup holográfico flutuante -->
+  <div class="hero-hologram">
+    <img src="assets/hologram-screen.png" alt="Holograma" />
   </div>
-</section>
 
-
-  <!-- TIMELINE -->
-  <section class="timeline-section">
-  <h2 class="timeline-title">Linha do Tempo de Desenvolvimento</h2>
-
-  <div class="timeline">
-
-    <div class="timeline-item left">
-      <div class="timeline-content">
-        <h3>1. Ideação</h3>
-        <p>Estruturação da proposta, definição das necessidades e criação do conceito inicial.</p>
-      </div>
-    </div>
-
-    <div class="timeline-item right">
-      <div class="timeline-content">
-        <h3>2. Design Futurista</h3>
-        <p>Construção da identidade visual, UI/UX e estética holográfica do projeto.</p>
-      </div>
-    </div>
-
-    <div class="timeline-item left">
-      <div class="timeline-content">
-        <h3>3. Desenvolvimento</h3>
-        <p>Implementação do front-end, backend, integrações e automações.</p>
-      </div>
-    </div>
-
-    <div class="timeline-item right">
-      <div class="timeline-content">
-        <h3>4. Integração com Chatbot</h3>
-        <p>Conexão com n8n, criação dos fluxos e inteligência das conversas.</p>
-      </div>
-    </div>
-
-    <div class="timeline-item left">
-      <div class="timeline-content">
-        <h3>5. Deploy Final</h3>
-        <p>Otimização, publicação e monitoramento contínuo.</p>
-      </div>
-    </div>
-
+  <!-- shapes orgânicos animados -->
+  <div class="shapes">
+    <div class="shape s1"></div>
+    <div class="shape s2"></div>
+    <div class="shape s3"></div>
   </div>
 </section>
+
 
   <!-- CHATBOT AREA -->
   <section class="chatbot-area" role="region" aria-label="Assistente IA">
@@ -151,7 +114,8 @@
           <li>Site profissional</li>
           <li>Design responsivo</li>
           <li>Integração WhatsApp</li>
-          <li>SEO básico</li>
+          <li>CEO básico</li>
+          <li>Responsive</li>
         </ul>
 
         <button class="plan-button" (click)="requestQuote('essencial')">Solicitar</button>
@@ -206,35 +170,3 @@
   </div>
 </section>
 
-<section class="testimonials-section" aria-label="Depoimentos de clientes">
-  <div class="testimonials-inner">
-    <h2 class="testimonials-title">O que nossos clientes dizem</h2>
-    <p class="testimonials-sub">Resultados reais. Feedback verdadeiro.</p>
-
-    <div class="testimonials-grid">
-      <article class="testimonial-card" *ngFor="let t of testimonials; let i = index" role="article">
-        <div class="testimonial-top">
-          <div class="avatar" aria-hidden="true">
-            <img [src]="t.avatar || 'assets/avatar-placeholder.png'" [alt]="t.name">
-          </div>
-          <div class="meta">
-            <strong class="name">{{ t.name }}</strong>
-            <span class="role">{{ t.role }}</span>
-            <div class="stars" aria-hidden="true">
-              <span *ngFor="let s of [1,2,3,4,5]" class="star" [class.filled]="s <= (t.rating || 5)">★</span>
-            </div>
-          </div>
-        </div>
-
-        <p class="testimonial-text">“{{ t.text }}”</p>
-
-        <footer class="testimonial-footer">
-          <small class="date">{{ t.date }}</small>
-        </footer>
-      </article>
-    </div>
-  </div>
-</section>
-
-
-  
