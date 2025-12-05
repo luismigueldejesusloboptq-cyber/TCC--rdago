@@ -1,68 +1,64 @@
-<!-- HERO FUTURISTA -->
-<section class="hero-future">
+<!-- HERO: LINHA DE PRODUÇÃO DIGITAL -->
+<section #heroContainer class="dev-hero">
+  <!-- Canvas de partículas / fundo (z-index:1) -->
+  <canvas id="heroCanvas" class="hero-canvas" aria-hidden="true"></canvas>
 
-  <!-- background holográfico -->
-  <canvas class="hero-canvas" id="heroCanvas"></canvas>
-
+  <!-- Conteúdo principal (z-index:5) -->
   <div class="hero-content">
-    <h1 class="glitch-title">
-      Sites que <span>evoluem</span><br>
-      com o seu negócio
+    <h1 class="hero-title">
+      LINHA DE
+      <span class="hero-gradient">PRODUÇÃO</span>
+      <br />
+      DIGITAL
     </h1>
+    <p class="hero-subtitle">Da primeira ideia ao deploy final — criamos experiências únicas, escaláveis e sob medida.</p>
 
-    <p class="hero-desc">
-      Construímos experiências digitais de alto impacto — rápidas, vivas, inteligentes
-      e preparadas para escalar sua empresa ao próximo nível.
-    </p>
-
-    <div class="cta-row">
-      <button class="btn-primary">Quero um Site Premium</button>
-      <button class="btn-ghost">Ver Projetos</button>
-    </div>
-  </div>
-
-  <!-- mockup holográfico flutuante -->
-  <div class="hero-hologram">
-    <img src="assets/hologram-screen.png" alt="Holograma" />
-  </div>
-
-  <!-- shapes orgânicos animados -->
-  <div class="shapes">
-    <div class="shape s1"></div>
-    <div class="shape s2"></div>
-    <div class="shape s3"></div>
-  </div>
-</section>
-
-
-  <!-- CHATBOT AREA -->
-  <section class="chatbot-area" role="region" aria-label="Assistente IA">
-    <div class="chat-wrapper">
-      <div class="chat-info">
-        <h3>Experimente nossa IA</h3>
-        <p>Fale agora com o assistente inteligente da Órdago.</p>
-        <button class="btn chat-btn" type="button" (click)="toggleChat()">
-          {{ chatOpen ? 'Fechar assistente' : 'Abrir Assistente' }}
-        </button>
-      </div>
-
-      <div class="chat-embed" *ngIf="chatOpen">
-       
-        <div class="chat-sim" aria-live="polite">
-          <div class="messages">
-            <div class="message bot">Olá! Como posso ajudar com seu projeto?</div>
-          </div>
-
-          <div class="chat-input">
-            <input type="text" placeholder="Digite sua mensagem..." aria-label="Mensagem do usuário" />
-            <button class="btn" type="button">Enviar</button>
-          </div>
+    <!-- passos (timeline curto) -->
+    <div class="hero-steps">
+      <div class="step" *ngFor="let item of timeline; let i = index">
+        <div class="step-index">0{{i + 1}}</div>
+        <div class="step-body">
+          <strong>{{item.title}}</strong>
+          <p>{{item.desc}}</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- PORTFOLIO -->
+  <!-- Linha de produção visual (faixa que se move) -->
+  <div class="production-wrap" aria-hidden="true">
+    <!-- elemento que animamos via CSS/JS -->
+    <div #productionLine class="production-track">
+      <!-- peças repetidas (visual) -->
+      <div class="piece"><div class="piece-inner">UI</div></div>
+      <div class="piece"><div class="piece-inner">API</div></div>
+      <div class="piece"><div class="piece-inner">PERF</div></div>
+      <div class="piece"><div class="piece-inner">SEC</div></div>
+      <div class="piece"><div class="piece-inner">TEST</div></div>
+      <!-- repetir para loop visual suave -->
+      <div class="piece"><div class="piece-inner">UI</div></div>
+      <div class="piece"><div class="piece-inner">API</div></div>
+      <div class="piece"><div class="piece-inner">PERF</div></div>
+      <div class="piece"><div class="piece-inner">SEC</div></div>
+      <div class="piece"><div class="piece-inner">TEST</div></div>
+    </div>
+
+    <!-- linhas neon sutis por trás (SVG) -->
+    <svg class="production-lines" viewBox="0 0 1600 120" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="g1" x1="0" x2="1">
+          <stop offset="0" stop-color="#5ef" stop-opacity="0.9" />
+          <stop offset="1" stop-color="#b086ff" stop-opacity="0.9" />
+        </linearGradient>
+      </defs>
+
+      <path class="p-line p1" d="M0 60 C200 20 400 100 800 60 C1200 20 1400 100 1600 60" stroke="url(#g1)" stroke-width="1.4" fill="none"/>
+      <path class="p-line p2" d="M0 80 C300 40 500 60 900 40 C1200 20 1500 80 1600 60" stroke="url(#g1)" stroke-width="0.9" fill="none" />
+    </svg>
+  </div>
+</section>
+
+ <!-- PORTFOLIO -->
   <section class="portfolio-section">
 
   <h2 class="portfolio-title">Portfólio Holográfico</h2>
@@ -86,7 +82,25 @@
       <img src="ecomerce.webp" alt="Projeto 3">
       <h3>E-commerce Personalizado</h3>
     </div>
+    
+    <div class="portfolio-card">
+      <div class="holo-layer"></div>
+      <img src="sistemas.webp" alt="Projeto 1">
+      <h3>Sistemas de Gestão e Softwares Customizados</h3>
+    </div>
 
+    <div class="portfolio-card">
+      <div class="holo-layer"></div>
+      <img src="app.jpg
+      " alt="Projeto 2">
+      <h3>Aplicativos Web Progressivos</h3>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="holo-layer"></div>
+      <img src="software.jpg" alt="Projeto 3">
+      <h3>Ferramentas de Produtividade e Utilitários</h3>
+    </div>
   </div>
 
 </section>
@@ -170,3 +184,5 @@
   </div>
 </section>
 
+
+<!-- FIM HERO -->
