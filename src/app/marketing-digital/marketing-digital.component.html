@@ -1,44 +1,46 @@
 <div class="md-page">
 
-  <!-- TOP HERO + KPI ROW -->
+  <!-- HERO ------------------------------------------------------------ -->
   <header class="hero reveal">
     <div class="hero-left">
-      <h1 class="hero-title">Marketing Digital que transforma tráfego em receita</h1>
+      <h1 class="hero-title">
+        Crescimento previsível com Marketing Digital de Alta Performance
+      </h1>
+
       <p class="hero-sub">
-        Sua empresa pode sair do invisível para estar na frente do cliente certo — todos os dias.
+        Sua empresa pode parar de depender da sorte e começar a atrair clientes todos os dias — no piloto automático.
       </p>
 
       <div class="cta-row">
-        <button class="btn primary">Quero Crescer Agora</button>
+        <button class="btn primary" (click)="openProposal()">Quero Crescer Agora</button>
         <button class="btn ghost">Ver Cases</button>
       </div>
     </div>
 
-    <div class="hero-right stats-row" >
-      <div class="stat" #statReach>
+    <div class="hero-right stats-row">
+      <div class="stat">
         <div class="stat-label">Aumento médio</div>
         <div class="stat-value" #statReach>0+</div>
         <div class="stat-sub">Alcance em 6 meses</div>
       </div>
 
-      <div class="stat" >
+      <div class="stat">
         <div class="stat-label">Leads/mês</div>
         <div class="stat-value" #statLeads>0</div>
-        <div class="stat-sub">Média após 3 meses</div>
+        <div class="stat-sub">Após 3 meses</div>
       </div>
 
       <div class="stat">
-        <div class="stat-label">ROI</div>
+        <div class="stat-label">ROI médio</div>
         <div class="stat-value" #statSales>0+</div>
-        <div class="stat-sub">Exemplo médio de clientes</div>
+        <div class="stat-sub">Casos reais</div>
       </div>
     </div>
   </header>
 
-  <!-- PROVA SOCIAL -->
+  <!-- SOCIAL PROOF ------------------------------------------------------------ -->
   <section class="social reveal">
     <div class="social-logos">
-      <!-- logos fictícias -->
       <div class="logo">BrandA</div>
       <div class="logo">AlphaCo</div>
       <div class="logo">Vento</div>
@@ -51,76 +53,88 @@
     </div>
 
     <div class="testimonials">
-      <blockquote class="t">“Em 6 meses dobramos o faturamento — estratégia clara e execução impecável.” <span>— Clara, CEO</span></blockquote>
+      <blockquote class="t">
+        “Em 6 meses dobramos o faturamento — estratégia clara e execução impecável.”
+        <span>— Clara, CEO</span>
+      </blockquote>
     </div>
   </section>
 
-  <!-- MINI NARRATIVA E TIMELINE (PERSUASIVA) -->
+  <!-- NARRATIVA / TIMELINE ------------------------------------------------------------ -->
   <section class="narrative reveal">
-    <h2 class="section-title">Do invisível ao escalável — previsão de resultados</h2>
-    <p class="lead-center">Abaixo uma previsão realista do que acontece quando você aplica estratégia + execução contínua.</p>
+    <h2 class="section-title">Do invisível ao escalável</h2>
+    <p class="lead-center">
+      Uma projeção realista do impacto de campanhas bem feitas.
+    </p>
 
     <div class="timeline">
       <div class="t-item">
         <div class="t-month">Mês 0</div>
-        <div class="t-note">Visibilidade baixa — trabalho inicial em branding e público.</div>
+        <div class="t-note">Diagnóstico, planejamento, público.</div>
       </div>
+
       <div class="t-item">
         <div class="t-month">Mês 3</div>
-        <div class="t-note">Primeiras campanhas com segmentação e otimização; leads consistentes.</div>
+        <div class="t-note">Primeiros leads consistentes.</div>
       </div>
+
       <div class="t-item">
         <div class="t-month">Mês 6</div>
-        <div class="t-note">Escala de anúncios + inbound — crescimento exponencial.</div>
+        <div class="t-note">Escala real — tráfego + inbound.</div>
       </div>
+
       <div class="t-item">
         <div class="t-month">Mês 12</div>
-        <div class="t-note">Fontes maduras e previsíveis. Base para escalar vendas.</div>
+        <div class="t-note">Processo previsível e lucrativo.</div>
       </div>
     </div>
   </section>
 
-  <!-- STRATEGY CARDS (como funciona) -->
+  <!-- CARDS ------------------------------------------------------------ -->
   <section class="cards reveal">
     <div class="card">
-      <div class="card-icon">🔍</div>
-      <h3>Decisões guiadas por dados</h3>
-      <p>Métricas toda semana — testes que geram resultado real.</p>
+      <div class="card-icon">📊</div>
+      <h3>Estratégia guiada por dados</h3>
+      <p>Decisões inteligentes baseadas em análise real, não achismo.</p>
     </div>
 
     <div class="card">
-      <div class="card-icon">✍️</div>
-      <h3>Conteúdo que converte</h3>
-      <p>Conteúdo pensado para atrair e educar o cliente ideal.</p>
+      <div class="card-icon">⚡</div>
+      <h3>Atração e conversão</h3>
+      <p>Conteúdos e anúncios que realmente geram ação.</p>
     </div>
 
     <div class="card">
-      <div class="card-icon">⚙️</div>
+      <div class="card-icon">🔁</div>
       <h3>Otimização contínua</h3>
-      <p>Campanhas otimizadas até você ver crescimento consistente.</p>
+      <p>Cada semana, um avanço em performance.</p>
     </div>
   </section>
 
-  <!-- FUNIL EXPLICATIVO -->
+  <!-- FUNIL ------------------------------------------------------------ -->
   <section class="funnel reveal">
-    <h2 class="section-title">O Funil — por que cada etapa importa</h2>
-    <div class="funnel-step"><i>👀</i><div><strong>Atração</strong><p>Trazer tráfego qualificado</p></div></div>
-    <div class="funnel-step"><i>💬</i><div><strong>Engajamento</strong><p>Educar e nutrir interesse</p></div></div>
-    <div class="funnel-step"><i>✅</i><div><strong>Conversão</strong><p>Transformar interesse em venda</p></div></div>
+    <h2 class="section-title">Por que o Funil importa</h2>
+
+    <div class="funnel-step">
+      <i>👀</i> <div><strong>Atração</strong><p>Tráfego qualificado</p></div>
+    </div>
+
+    <div class="funnel-step">
+      <i>💬</i> <div><strong>Engajamento</strong><p>Nutrição inteligente</p></div>
+    </div>
+
+    <div class="funnel-step">
+      <i>💰</i> <div><strong>Conversão</strong><p>Vendas previsíveis</p></div>
+    </div>
   </section>
 
-  <!-- COMPARAÇÃO MATEMÁTICA -->
-  <section class="math reveal">
-    <h3>Comparação prática</h3>
-    <p><strong>Investimento médio</strong>: R$ 800/mês → <strong>Retorno estimado</strong>: R$ 6.000 — R$ 18.000</p>
-    <small>Marketing é investimento multiplicador, não custo fixo.</small>
-  </section>
-
-  <!-- CHART PREVIEWS (clicáveis para detalhes) -->
+  <!-- CHARTS ------------------------------------------------------------ -->
   <section class="charts reveal">
-    <h2 class="section-title">Resultados (exemplos)</h2>
+    <h2 class="section-title">Resultados (exemplos reais)</h2>
 
     <div class="charts-grid">
+
+      <!-- Growth Chart -->
       <div class="chart-card" [class.expanded]="expanded['growth']">
         <div class="chart-head">
           <h4>Crescimento</h4>
@@ -131,14 +145,16 @@
             <button class="expand-btn" (click)="openModal('growth')">Abrir maior</button>
           </div>
         </div>
+
         <div class="chart-wrapper" [class.expanded]="expanded['growth']">
           <canvas #growthCanvas></canvas>
         </div>
       </div>
 
+      <!-- Traffic Chart -->
       <div class="chart-card" [class.expanded]="expanded['traffic']">
         <div class="chart-head">
-          <h4>Fontes de tráfego</h4>
+          <h4>Fontes de Tráfego</h4>
           <div class="chart-actions">
             <button class="expand-btn" (click)="toggleExpand('traffic')">
               {{ expanded['traffic'] ? 'Fechar' : 'Ver detalhes' }}
@@ -146,11 +162,13 @@
             <button class="expand-btn" (click)="openModal('traffic')">Abrir maior</button>
           </div>
         </div>
+
         <div class="chart-wrapper" [class.expanded]="expanded['traffic']">
           <canvas #trafficCanvas></canvas>
         </div>
       </div>
 
+      <!-- Doughnut Chart -->
       <div class="chart-card" [class.expanded]="expanded['doughnut']">
         <div class="chart-head">
           <h4>Conversão</h4>
@@ -161,22 +179,25 @@
             <button class="expand-btn" (click)="openModal('doughnut')">Abrir maior</button>
           </div>
         </div>
+
         <div class="chart-wrapper" [class.expanded]="expanded['doughnut']">
           <canvas #doughnutCanvas></canvas>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- ANTES / DEPOIS COM MINI-CASE -->
+  <!-- ANTES E DEPOIS ------------------------------------------------------------ -->
   <section class="before-after reveal">
-    <h2 class="section-title">Antes → Depois (caso exemple)</h2>
+    <h2 class="section-title">Antes → Depois</h2>
+
     <div class="ba-grid">
       <div class="ba before">
         <h4>Antes</h4>
         <ul>
           <li>120 visitas/mês</li>
-          <li>Nenhuma automação</li>
+          <li>Zero automação</li>
           <li>Vendas sazonais</li>
         </ul>
       </div>
@@ -185,35 +206,42 @@
         <h4>Depois (6 meses)</h4>
         <ul>
           <li>4.800 visitas/mês</li>
-          <li>Funil automatizado</li>
+          <li>Funil 100% automatizado</li>
           <li>Vendas previsíveis</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- FINAL CTA -->
+  <!-- CTA FINAL ------------------------------------------------------------ -->
   <section class="final-cta reveal">
-    <h2 class="section-title">Pronto para transformar sua empresa?</h2>
-    <p class="lead-center">A cada mês sem estratégia, sua concorrência cresce. Vamos agir agora.</p>
+    <h2 class="section-title">Pronto para escalar sua empresa?</h2>
+
+    <p class="lead-center">
+      Cada mês sem estratégia é um mês que sua concorrência dispara na sua frente.
+    </p>
+
     <div class="cta-row center">
-      <button class="btn primary">Quero Proposta</button>
-      <button class="btn ghost">Receber Simulação</button>
+      <button class="btn primary" (click)="openProposal()">Quero Proposta</button>
+      <button class="btn ghost">Ver Simulação</button>
     </div>
   </section>
 
-  <!-- MODAL FULLSCREEN PARA GRÁFICOS -->
-  <div class="modal" *ngIf="modalOpen">
+  <!-- MODAL ------------------------------------------------------------ -->
+  <div class="modal" *ngIf="modalOpen" role="dialog" aria-modal="true">
     <div class="modal-backdrop" (click)="closeModal()"></div>
+
     <div class="modal-content">
       <button class="modal-close" (click)="closeModal()">Fechar ✕</button>
-      <h3>{{ modalChart === 'growth' ? 'Crescimento' : (modalChart === 'traffic' ? 'Fontes' : 'Conversão') }}</h3>
+
+      <h3>
+        {{ modalChart === 'growth' ? 'Crescimento' : modalChart === 'traffic' ? 'Fontes' : 'Conversão' }}
+      </h3>
+
       <div class="modal-chart">
-        <!-- reuse same canvases for simplicity; charts will resize -->
-        <canvas *ngIf="modalChart === 'growth'" #growthCanvas></canvas>
-        <canvas *ngIf="modalChart === 'traffic'" #trafficCanvas></canvas>
-        <canvas *ngIf="modalChart === 'doughnut'" #doughnutCanvas></canvas>
+        <div #modalChartHost></div>
       </div>
     </div>
   </div>
+
 </div>

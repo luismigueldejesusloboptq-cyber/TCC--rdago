@@ -5,7 +5,7 @@ import { MarketingDigitalComponent } from './marketing-digital/marketing-digital
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuard } from './auth.guard';
-
+import { AutomacoesComponent } from './automacoes/automacoes.component';
 
 export const routes: Routes = [
   {
@@ -18,24 +18,26 @@ export const routes: Routes = [
     component: DesenvolvimentoComponent
   },
 
-  {
-    path: 'marketing-digital',
-    component: MarketingDigitalComponent
-  },
-
-  // 🔒 ROTA PÚBLICA DE ADMIN: FORMULÁRIO DE LOGIN
   { 
     path: 'admin/login', 
     component: LoginComponent 
   },
 
-  // 🛡️ ROTA PROTEGIDA: DASHBOARD
- { 
-  path: 'admin/dashboard',
-  component: DashboardComponent,
-canActivate: [AuthGuard]
-},
+  {
+    path: 'marketing-digital',
+    component: MarketingDigitalComponent
+  },
 
-  // Rota curinga, redireciona para a home
+  {
+    path: 'automacoes',
+    component: AutomacoesComponent     //  ← ADICIONADO
+  },
+
+  { 
+    path: 'admin/dashboard',
+    component: DashboardComponent,
+    canActivate: [AuthGuard]
+  },
+
   { path: '**', redirectTo: '' }
 ];

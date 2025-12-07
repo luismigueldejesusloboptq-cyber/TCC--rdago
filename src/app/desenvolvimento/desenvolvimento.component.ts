@@ -2,18 +2,18 @@ import { Component, OnInit, ElementRef, ViewChild, AfterViewInit, HostListener }
 import { ChatbotService } from "../services/chatbot.service";
 
 @Component({
-  selector: 'app-desenvolvimento',
-  templateUrl: './desenvolvimento.component.html',
-  styleUrls: ['./desenvolvimento.component.css']
+ selector: 'app-desenvolvimento',
+ templateUrl: './desenvolvimento.component.html',
+ styleUrls: ['./desenvolvimento.component.css']
 })
 export class DesenvolvimentoComponent implements OnInit, AfterViewInit {
 
-  // =======================================================
-  // HERO — LINHA DE PRODUÇÃO DIGITAL
-  // =======================================================
-  // Mantido para referências futuras, mas não será usado para Parallax.
-  @ViewChild('heroContainer') heroContainer!: ElementRef<HTMLElement>;
-  @ViewChild('productionLine') productionLine!: ElementRef<HTMLElement>;
+ // =======================================================
+// HERO — LINHA DE PRODUÇÃO DIGITAL
+// =======================================================
+// Mantido para referências futuras, mas não será usado para Parallax.
+ @ViewChild('heroContainer') heroContainer!: ElementRef<HTMLElement>;
+ @ViewChild('productionLine') productionLine!: ElementRef<HTMLElement>;
 
   // Variáveis de parallax (mantidas, mas não utilizadas)
   mouseX = 0;
