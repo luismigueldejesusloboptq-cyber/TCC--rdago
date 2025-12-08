@@ -1,0 +1,93 @@
+/* === video wrapper (você pediu essa classe) === */
+.video-wrapper {
+  width: 100%;
+  max-width: 950px;
+  aspect-ratio: 16/9;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(96,165,250,0.08);
+  box-shadow: 0 0 40px rgba(80,160,255,0.08);
+  margin: 18px auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: #000;
+}
+
+/* vídeo interno */
+.video-wrapper .promo-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* botão de desligar/ligar som do vídeo */
+.video-sound-toggle {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  z-index: 6;
+  border: none;
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  padding: 8px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+  font-size: 14px;
+}
+
+/* === layout vendas === */
+.vendas-page { padding: 36px 20px; color: #e6eef8; background: #07070a; min-height: 100vh; }
+.vendas-header { text-align:center; margin-bottom: 18px; }
+.vendas-title { font-size: 1.9rem; color: #8A2BE2; margin: 0; }
+.vendas-sub { color: #aab0c8; margin-top: 6px; }
+
+/* container 2-colunas */
+.vendas-container { display: grid; grid-template-columns: 420px 1fr; gap: 26px; max-width:1200px; margin: 0 auto; align-items:start; }
+
+/* preview card */
+.service-card-preview { background: rgba(255,255,255,0.02); border-radius: 12px; padding: 12px; display:flex; gap:12px; }
+.service-card-preview .thumb img { width: 150px; height: 100px; object-fit:cover; border-radius:8px; }
+.service-info { flex:1; }
+.service-title { margin:0 0 6px 0; font-size:1.15rem; }
+.service-short { margin:0 0 8px 0; color:#bfc6da; font-size:.95rem; }
+.service-features { padding-left:16px; margin:8px 0; color:#d6dbe9; }
+.service-price { margin-top:8px; font-weight:700; color:#00e0ff; font-size:1.3rem; }
+
+/* pricing grid (reaproveitando seu CSS, simplificado) */
+.venda-pricing .pricing-grid { display:grid; grid-template-columns: 1fr; gap:14px; margin-top:10px; }
+@media(min-width:880px) { .venda-pricing .pricing-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.pricing-card { background: #151520; border-radius: 12px; padding:16px; border:1px solid rgba(255,255,255,0.04); text-align:left; position:relative; }
+.featured { border:2px solid #8A2BE2; box-shadow: 0 8px 30px rgba(138,43,226,0.15); }
+.featured-tag { position:absolute; top:-12px; right:10px; background:#8A2BE2; padding:6px 10px; border-radius:8px; font-weight:700; }
+
+/* plano texto */
+.plan-name { font-size:1.1rem; margin:0 0 6px; }
+.plan-desc { color:#b9bfd2; margin:0 0 12px; }
+.price .amount { font-size:1.6rem; color:#00BFFF; font-weight:800; }
+.plan-button { width:100%; padding:10px; border-radius:8px; border:none; background:#00BFFF; color:#041028; font-weight:700; cursor:pointer; margin-top:10px; }
+.featured-btn { background:#8A2BE2; color:#fff; }
+
+/* checkout */
+.checkout-section { margin-top: 20px; background: rgba(255,255,255,0.01); padding: 14px; border-radius: 12px; }
+.checkout-form label { display:block; margin-bottom:10px; font-size:0.95rem; color:#dce6ff; }
+.checkout-form input, .checkout-form textarea { width:100%; padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.06); background: rgba(0,0,0,0.45); color:inherit; }
+.checkout-meta { display:flex; justify-content:space-between; gap:10px; margin-top:12px; color:#dce6ff; }
+
+/* buttons */
+.btn-primary { background:#6b21a8; color:#fff; border:none; padding:10px 14px; border-radius:8px; cursor:pointer; }
+.btn-secondary { background:transparent; border:1px solid rgba(255,255,255,0.06); color:#fff; padding:10px 12px; border-radius:8px; cursor:pointer; margin-left:8px; }
+
+/* success */
+.checkout-success { margin-top:12px; padding:12px; background: rgba(34,197,94,0.06); border-radius:8px; color:#c9f7de; }
+
+/* RESPONSIVE */
+@media (max-width: 980px) {
+  .vendas-container { grid-template-columns: 1fr; }
+  .video-wrapper { max-width: 100%; }
+  .service-card-preview .thumb img { width: 100%; height: 160px; }
+}

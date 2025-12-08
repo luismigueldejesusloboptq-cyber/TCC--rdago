@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuard } from './auth.guard';
 import { AutomacoesComponent } from './automacoes/automacoes.component';
+import { VendasComponent } from './vendas/vendas.component'; 
 
 export const routes: Routes = [
   {
@@ -30,7 +31,11 @@ export const routes: Routes = [
 
   {
     path: 'automacoes',
-    component: AutomacoesComponent     //  ← ADICIONADO
+    component: AutomacoesComponent     
+  },
+  {
+    path: 'vendas',         
+    component: VendasComponent
   },
 
   { 
@@ -40,4 +45,5 @@ export const routes: Routes = [
   },
 
   { path: '**', redirectTo: '' }
+  
 ];
