@@ -139,3 +139,9 @@ input {
   .messages { height: 260px; }
   .video-wrapper { aspect-ratio: 16/10; }
 }
+
+
+.card-icon{
+  width: 70px;
+  height: 70px;
+}

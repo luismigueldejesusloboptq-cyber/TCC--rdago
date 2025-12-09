@@ -1,8 +1,12 @@
 import { Component, OnInit, ElementRef, ViewChild, AfterViewInit, HostListener } from '@angular/core';
 import { ChatbotService } from "../services/chatbot.service";
+import { AcquireButtonComponent } from '../acquire-button/acquire-button.component'; 
 
 @Component({
  selector: 'app-desenvolvimento',
+  imports: [
+    AcquireButtonComponent
+  ],
  templateUrl: './desenvolvimento.component.html',
  styleUrls: ['./desenvolvimento.component.css']
 

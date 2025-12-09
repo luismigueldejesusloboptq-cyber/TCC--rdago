@@ -1,10 +1,10 @@
 import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { AcquireButtonComponent } from '../acquire-button/acquire-button.component'; 
 @Component({
   selector: 'app-automacoes',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,AcquireButtonComponent],
   templateUrl: './automacoes.component.html',
   styleUrls: ['./automacoes.component.css']
 })

@@ -1,143 +1,52 @@
+<section class="sales-container">
 
-<section class="vendas-page">
+  <h1 class="title">Escolha o serviço ideal para você</h1>
 
-  <!-- topo / título -->
-  <header class="vendas-header">
-    <h1 class="vendas-title">Detalhes do Serviço & Compra</h1>
-    <p class="vendas-sub">Veja o que oferecemos, personalize e solicite agora — checkout simulado, sem backend.</p>
-  </header>
-
-  <div class="vendas-container">
-
-    <!-- coluna esquerda: preview do serviço + vídeo opcional -->
-    <aside class="vendas-preview">
-
-      <div class="service-card-preview">
-        <div class="thumb">
-          <!-- imagem de exemplo; você pode trocar dinamicamente no TS -->
-          <img src="/assets/portfolio/dashboard-administrativo.jpg" alt="Serviço selecionado">
-        </div>
-        <div class="service-info">
-          <h2 class="service-title">Dashboard Administrativo</h2>
-          <p class="service-short">Painel de gestão e KPIs otimizados para tomada de decisão.</p>
-
-          <ul class="service-features">
-            <li>Relatórios customizados</li>
-            <li>Integração com APIs</li>
-            <li>Autenticação e permissões</li>
-          </ul>
-
-          <div class="service-price">
-            <span class="currency">R$</span>
-            <span class="amount">3.900</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- área de vídeo opcional (autoplay com controle de som) -->
-      <div class="video-wrapper" id="videoWrapper">
-        <video id="promoVideo" class="promo-video" autoplay muted playsinline loop>
-          <!-- exemplo: coloque arquivo mp4 em assets ou use source dinâmico depois no TS -->
-          <source src="/assets/videos/demo.mp4" type="video/mp4" />
-          Seu navegador não suporta vídeo.
-        </video>
-
-        <button class="video-sound-toggle" id="soundToggle" aria-pressed="false" title="Ativar som">
-          🔈
-        </button>
-      </div>
-
-    </aside>
-
-    <!-- coluna direita: planos e formulário -->
-    <main class="vendas-main">
-
-      <!-- seção de planos (use seu HTML de pricing adaptado) -->
-      <section class="pricing-section venda-pricing">
-        <h3 class="pricing-title-small">Planos e Soluções</h3>
-
-        <div class="pricing-grid">
-          <article class="pricing-card">
-            <h4 class="plan-name">Essencial</h4>
-            <p class="plan-desc">Para presença profissional.</p>
-            <div class="price"><span class="currency">R$</span><span class="amount">1.500</span></div>
-            <ul class="plan-features">
-              <li>Site profissional</li>
-              <li>Design responsivo</li>
-              <li>Integração WhatsApp</li>
-            </ul>
-            <button class="plan-button select-plan" data-plan="essencial">Selecionar</button>
-          </article>
-
-          <article class="pricing-card featured">
-            <div class="featured-tag">Mais Popular</div>
-            <h4 class="plan-name">Avançado</h4>
-            <p class="plan-desc">Performance e automação.</p>
-            <div class="price"><span class="currency">R$</span><span class="amount">3.900</span></div>
-            <ul class="plan-features">
-              <li>Site + painel admin</li>
-              <li>Automação (n8n)</li>
-              <li>Hospedagem otimizada</li>
-            </ul>
-            <button class="plan-button featured-btn select-plan" data-plan="avancado">Selecionar</button>
-          </article>
-
-          <article class="pricing-card">
-            <h4 class="plan-name">Enterprise</h4>
-            <p class="plan-desc">Sistemas escaláveis.</p>
-            <div class="price"><span class="currency">R$</span><span class="amount">7.900</span></div>
-            <ul class="plan-features">
-              <li>Infra AWS / GCP</li>
-              <li>APIs personalizadas</li>
-              <li>Suporte 24/7</li>
-            </ul>
-            <button class="plan-button select-plan" data-plan="enterprise">Selecionar</button>
-          </article>
-        </div>
-      </section>
-
-      <!-- formulário do cliente / checkout simulado -->
-      <section class="checkout-section">
-        <h3>Seus dados</h3>
-
-        <form class="checkout-form" id="checkoutForm" novalidate>
-          <label>
-            Nome completo
-            <input type="text" name="name" id="name" required />
-          </label>
-
-          <label>
-            Email
-            <input type="email" name="email" id="email" required />
-          </label>
-
-          <label>
-            Telefone
-            <input type="tel" name="phone" id="phone" />
-          </label>
-
-          <label>
-            Observações
-            <textarea name="notes" id="notes" rows="3"></textarea>
-          </label>
-
-          <div class="checkout-meta">
-            <div class="selected-plan-label">Plano selecionado: <strong id="selectedPlan">Nenhum</strong></div>
-            <div class="selected-price">Total: <strong id="selectedPrice">R$ 0</strong></div>
-          </div>
-
-          <div class="checkout-actions">
-            <button type="submit" class="btn-primary">Pagar e Solicitar</button>
-            <button type="button" class="btn-secondary" id="resetBtn">Limpar</button>
-          </div>
-
-          <div class="checkout-success" id="checkoutSuccess" hidden>
-            <h4>Pedido simulado enviado ✅</h4>
-            <p>Obrigado! Seus dados foram registrados (simulação).</p>
-          </div>
-        </form>
-      </section>
-
-    </main>
+  <div class="dropdown-area">
+    <select (change)="onServiceChange($event)">
+      <option *ngFor="let s of services" [value]="s.value">
+        {{ s.label }}
+      </option>
+    </select>
   </div>
+
+  <div class="cards-area">
+    <div class="plan-card" *ngFor="let plan of selectedPlans">
+
+      <h2>{{ plan.title }}</h2>
+      <p class="price">{{ plan.price }}</p>
+      <p class="description">{{ plan.description }}</p>
+
+      <ul>
+        <li *ngFor="let f of plan.features">✔ {{ f }}</li>
+      </ul>
+
+      <button class="btn-buy" (click)="openPayment(plan.title)">
+        Quero este plano
+      </button>
+
+    </div>
+  </div>
+
 </section>
+
+<!-- 🟣 MODAL DE PAGAMENTO -->
+<div class="modal-backdrop" *ngIf="showModal" (click)="closeModal()"></div>
+
+<div class="modal" *ngIf="showModal">
+  <h2>Finalizar Pedido</h2>
+  <p class="subtitle">Plano selecionado:</p>
+  <p class="selected-plan">{{ selectedPlanName }}</p>
+
+  <form class="payment-form">
+    <input type="text" placeholder="Nome completo" required>
+    <input type="email" placeholder="Email" required>
+    <input type="text" placeholder="Número do cartão" required>
+    <input type="text" placeholder="Validade (MM/AA)" required>
+    <input type="text" placeholder="CVV" required>
+
+    <button class="btn-confirm">Confirmar compra</button>
+  </form>
+
+  <button class="btn-close" (click)="closeModal()">Fechar</button>
+</div>

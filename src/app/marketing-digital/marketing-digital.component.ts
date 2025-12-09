@@ -7,9 +7,10 @@ import {
 } from '@angular/core';
 
 import { Chart } from 'chart.js/auto';
-
+import { AcquireButtonComponent } from '../acquire-button/acquire-button.component'; 
 @Component({
   selector: 'app-marketing-digital',
+  imports: [AcquireButtonComponent],
   templateUrl: './marketing-digital.component.html',
   styleUrls: ['./marketing-digital.component.css']
 })

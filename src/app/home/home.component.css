@@ -297,3 +297,8 @@ body {
     flex-grow: 1; 
     text-align: center;
 }
+
+.images{
+    width: 200px;
+    height: 200px;
+}

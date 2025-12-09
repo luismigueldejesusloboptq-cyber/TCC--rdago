@@ -16,7 +16,7 @@ interface HistoryItem {
   standalone: true,
   imports: [
     CommonModule, 
-    RouterLink 
+    RouterLink,
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
