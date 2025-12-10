@@ -1,6 +1,5 @@
 .auto-page {
   padding: clamp(18px, 3vw, 40px);
-  background: linear-gradient(180deg, #040814, #07101d);
   color: #e6f0ff;
   font-family: 'Inter', sans-serif;
 }

@@ -17,17 +17,42 @@
   margin-bottom: 35px;
 }
 
+.dropdown-area {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
 .dropdown-area select {
-  padding: 12px 16px;
-  font-size: 1.1rem;
-  border-radius: 12px;
-  border: 1px solid #9d7cff;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(8px);
-  color: #5024ff;
+  padding: 14px 20px;
+  font-size: 1.15rem;
+  border-radius: 14px;
+  border: 1px solid rgba(150, 110, 255, 0.6);
+
+  background: rgba(25, 20, 45, 0.75);
+  color: #e8e0ff;
+
   font-weight: 600;
   cursor: pointer;
+
+  box-shadow: 0 0 18px rgba(150, 110, 255, 0.25);
+  transition: 0.25s ease;
+  outline: none;
+
+  backdrop-filter: blur(10px);
 }
+
+.dropdown-area select:hover {
+  box-shadow: 0 0 24px rgba(160, 120, 255, 0.45);
+  border-color: #b88bff;
+}
+
+.dropdown-area select:focus {
+  border-color: #caa3ff;
+  box-shadow: 0 0 30px rgba(170, 130, 255, 0.6);
+}
+
+
 
 /* ----------------------- */
 /* CARDS FUTURISTAS        */
@@ -112,6 +137,7 @@
   background: rgba(0,0,0,0.6);
   backdrop-filter: blur(4px);
   animation: fadeIn 0.3s ease;
+  z-index: 9;
 }
 
 .modal {
@@ -125,9 +151,10 @@
   border-radius: 18px;
   padding: 30px;
   box-shadow: 0 0 30px rgba(140, 92, 255, 0.3);
-  z-index: 10;
   animation: slideUp 0.3s ease;
+  z-index: 10;
 }
+
 
 .modal h2 {
   font-size: 1.8rem;
@@ -149,11 +176,35 @@
 
 .payment-form input {
   width: 100%;
-  padding: 12px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #a78bfa;
+  padding: 14px;
+
+  border-radius: 12px;
+  margin-bottom: 12px;
+
+  border: 1px solid rgba(180, 140, 255, 0.45);
+  background: rgba(25, 20, 45, 0.65);
+
+  color: #f0eaff;
+  font-size: 1rem;
+
+  backdrop-filter: blur(8px);
+
+  transition: 0.25s ease;
+  outline: none;
+
+  box-shadow: 0 0 12px rgba(150, 110, 255, 0.18);
 }
+
+.payment-form input::placeholder {
+  color: rgba(220, 200, 255, 0.65);
+}
+
+.payment-form input:focus {
+  border-color: #caa3ff;
+  box-shadow: 0 0 22px rgba(180, 140, 255, 0.5);
+  background: rgba(35, 30, 60, 0.75);
+}
+
 
 .btn-confirm {
   width: 100%;
@@ -186,4 +237,113 @@
 @keyframes slideUp {
   from { transform: translate(-50%, -40%); opacity: 0; }
   to { transform: translate(-50%, -50%); opacity: 1; }
+}
+
+.modal {
+  position: fixed !important;
+  z-index: 999999 !important;  /* FORÇA por cima */
+  display: block !important;
+  opacity: 1 !important;
+}
+
+.modal-backdrop {
+  position: fixed !important;
+  z-index: 999998 !important;
+}
+
+
+/* ----------------------------- */
+/* CARDS FUTURISTAS LEGÍVEIS     */
+/* ----------------------------- */
+
+.cards-area {
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  margin-top: 40px;
+}
+
+.plan-card {
+  background: rgba(20, 20, 35, 0.65); /* fundo mais escuro para contraste */
+  backdrop-filter: blur(18px);
+  border-radius: 22px;
+  padding: 32px;
+  border: 1px solid rgba(120, 82, 255, 0.45);
+  box-shadow: 0 0 35px rgba(120, 82, 255, 0.25);
+  transition: 0.35s ease;
+}
+
+.plan-card:hover {
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: 0 0 55px rgba(150, 110, 255, 0.45);
+}
+
+/* TÍTULO DO PLANO – mais forte */
+.plan-card h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #b78dff;
+  text-shadow: 0 0 12px rgba(153, 110, 255, 0.5);
+}
+
+/* PREÇO – destaque máximo */
+.price {
+  font-size: 2.2rem;
+  margin: 10px 0 20px;
+  font-weight: 800;
+  color: #d2b3ff;
+  text-shadow: 0 0 15px rgba(180, 130, 255, 0.4);
+}
+
+/* Descrição */
+.description {
+  font-size: 1rem;
+  color: rgba(230, 230, 255, 0.85);
+  margin-bottom: 20px;
+}
+
+/* Lista de features */
+.plan-card ul {
+  padding-left: 0;
+  margin: 0 0 22px;
+}
+
+.plan-card li {
+  list-style: none;
+  padding: 6px 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(240, 240, 255, 0.9);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.plan-card li::before {
+  content: '✔';
+  color: #9c6fff;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(160, 120, 255, 0.6);
+}
+
+/* BOTÃO PREMIUM */
+.btn-buy {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  font-size: 1.15rem;
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: 700;
+  background: linear-gradient(90deg, #6a4cff, #b478ff);
+  color: white;
+  letter-spacing: 0.5px;
+  transition: 0.3s;
+  box-shadow: 0 0 15px rgba(150, 105, 255, 0.3);
+}
+
+.btn-buy:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(160, 110, 255, 0.5);
+  opacity: 1;
 }

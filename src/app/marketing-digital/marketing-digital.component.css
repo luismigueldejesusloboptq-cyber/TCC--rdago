@@ -1,6 +1,5 @@
 /* -------- base / page -------- */
 .md-page {
-  background: linear-gradient(180deg,#071028 0,#06101a 100%);
   color: #e6f0ff;
   padding: clamp(18px, 3.5vw, 48px);
   font-family: 'Inter', system-ui, -apple-system, 'Poppins', sans-serif;

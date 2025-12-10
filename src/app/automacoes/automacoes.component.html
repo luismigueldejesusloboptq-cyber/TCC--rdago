@@ -1,25 +1,24 @@
 <div class="auto-page">
-
   <!-- HERO + VIDEO -->
   <section class="hero-auto reveal">
     <div class="hero-text">
       <h1 class="title">Automatizações Inteligentes com n8n</h1>
       <p class="sub">
-        Automatize processos, reduza custos e escale sua empresa com fluxos avançados construídos em n8n.
+        Automatize processos, reduza custos e escale sua empresa com fluxos
+        avançados construídos em n8n.
       </p>
     </div>
 
     <div class="video-wrapper">
-  <iframe
-    src="https://www.youtube.com/embed/46fd56yw-8Y?autoplay=1&mute=1&controls=0&loop=1&playlist=46fd56yw-8Y"
-    frameborder="0"
-    allow="autoplay; encrypted-media"
-    allowfullscreen>
-  </iframe>
-</div>
+      <iframe
+        src="https://www.youtube.com/embed/46fd56yw-8Y?autoplay=1&mute=1&controls=0&loop=1&playlist=46fd56yw-8Y"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+      >
+      </iframe>
+    </div>
   </section>
-
-
 
   <!-- BENEFÍCIOS -->
   <section class="benefits reveal">
@@ -27,45 +26,57 @@
 
     <div class="benefits-grid">
       <div class="benefit-card">
-        <i class="icon"><img src="processosvelow.png" class="card-icon"></i>
+        <i class="icon"><img src="processosvelow.png" class="card-icon" /></i>
         <h3>Velocidade Operacional</h3>
-        <p>Automatize tarefas repetitivas e ganhe mais tempo para decisões estratégicas.</p>
+        <p>
+          Automatize tarefas repetitivas e ganhe mais tempo para decisões
+          estratégicas.
+        </p>
       </div>
 
       <div class="benefit-card">
-        <i class="icon"><img src="processoscard.png" class="card-icon"></i>
+        <i class="icon"><img src="processoscard.png" class="card-icon" /></i>
         <h3>Processos Robustos</h3>
-        <p>Reduza erros manuais com fluxos inteligentes conectando suas ferramentas.</p>
+        <p>
+          Reduza erros manuais com fluxos inteligentes conectando suas
+          ferramentas.
+        </p>
       </div>
 
       <div class="benefit-card">
-        <i class="icon"><img src="processos.png" class="card-icon"></i>
+        <i class="icon"><img src="processos.png" class="card-icon" /></i>
         <h3>Escalabilidade</h3>
-        <p>Cresça sem aumentar sua equipe — deixe as automações trabalharem por você.</p>
+        <p>
+          Cresça sem aumentar sua equipe — deixe as automações trabalharem por
+          você.
+        </p>
       </div>
     </div>
   </section>
 
-
   <!-- CHATBOT -->
   <section class="chat-section reveal">
     <h2 class="section-title">Precisa de ajuda com automações?</h2>
-    <p class="center">Converse com nosso assistente e tire dúvidas sobre fluxos, integrações e n8n.</p>
+    <p class="center">
+      Converse com nosso assistente e tire dúvidas sobre fluxos, integrações e
+      n8n.
+    </p>
 
     <div class="chat-container">
       <div class="messages" #chatMessages></div>
 
       <div class="input-row">
-        <input 
-          #userInput 
-          type="text" 
+        <input
+          #userInput
+          type="text"
           placeholder="Digite sua pergunta..."
           (keydown.enter)="sendMessage(userInput.value)"
         />
-        <button class="send-btn" (click)="sendMessage(userInput.value)">Enviar</button>
+        <button class="send-btn" (click)="sendMessage(userInput.value)">
+          Enviar
+        </button>
       </div>
     </div>
   </section>
-<app-acquire-button></app-acquire-button>
+  <app-acquire-button></app-acquire-button>
 </div>
-

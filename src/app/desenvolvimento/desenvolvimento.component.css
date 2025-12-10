@@ -299,7 +299,7 @@
   border-radius: 10px;
   overflow: hidden;
   border: 1px solid rgba(255,255,255,0.04);
-  background: rgba(255,255,255,0.01);
+
   box-sizing: border-box;
 }
 
@@ -759,7 +759,7 @@
 /* portfolio */
 .portfolio-section {
   padding: 100px 40px;
-  background: #03040d;
+  
   text-align: center;
 }
 
@@ -1254,7 +1254,7 @@
   align-items: center;
   justify-content: space-between;
   overflow: hidden;
-  background: radial-gradient(circle at 20% 20%, #0d0f1e, #05060d 80%);
+
 }
 
 /* Background animado */
@@ -1433,7 +1433,6 @@
   padding: 4rem 6rem;
   box-sizing: border-box;
   overflow: hidden;
-  background: radial-gradient(circle at 10% 10%, #071018 0%, #03040a 60%, #020305 100%);
   color: #dfeefe;
 }
 

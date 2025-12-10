@@ -35,6 +35,7 @@ export class VendasComponent {
         price: 'R$ 1.497',
         description: 'Site moderno, rápido e responsivo.',
         features: ['Design Premium', 'SEO Inicial', 'Até 5 páginas', 'Integrações básicas']
+        
       },
       {
         title: 'Site Avançado',
