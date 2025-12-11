@@ -37,11 +37,12 @@ export class AutomacoesComponent implements AfterViewInit {
 
     // chamada ao seu fluxo n8n
     try {
-      const response = await fetch('https://SEU_FLUXO_N8N_WEBHOOK', {
-        method: 'POST',
-        body: JSON.stringify({ question: text }),
-        headers: { 'Content-Type': 'application/json' }
-      });
+      const response = await fetch('http://localhost:3000/chatbot', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ question: text })
+});
+
 
       const data = await response.json();
       this.addMessage(data.reply || 'Desculpe, não entendi.', 'bot');

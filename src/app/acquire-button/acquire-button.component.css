@@ -1,3 +1,19 @@
+/* CONTAINER DE ALINHAMENTO — PADRÃO PARA TODAS AS PÁGINAS */
+.acquire-container {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* ⬅ ALINHAMENTO CENTRAL (RECOMENDADO) */
+  margin: 40px 0; /* distância elegante do conteúdo */
+}
+
+/* Se quiser alinhar à direita, troque por: */
+/* justify-content: flex-end; */
+
+/* Se quiser alinhar à esquerda, troque por: */
+/* justify-content: flex-start; */
+
+
+/* BOTÃO FUTURISTA */
 .acquire-btn {
   padding: 14px 32px;
   font-size: 1.1rem;
@@ -10,6 +26,8 @@
   box-shadow: 0 0 18px rgba(108, 99, 255, 0.4);
   letter-spacing: 0.5px;
   transition: 0.25s ease-in-out;
+  text-align: center;
+  display: inline-block;
 }
 
 .acquire-btn:hover {

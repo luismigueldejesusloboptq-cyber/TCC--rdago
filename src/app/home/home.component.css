@@ -302,3 +302,30 @@ body {
     width: 200px;
     height: 200px;
 }
+
+/* ------------------------------- */
+/* CARROSSEL LIVRE FUTURISTA */
+/* ------------------------------- */
+
+.carousel-img-free {
+  width: 100%;
+  height: 420px;
+  object-fit: contain;
+  display: block;
+  margin: 40px auto;
+  transition: transform 1.1s ease, filter 0.7s ease;
+  filter: drop-shadow(0 0 8px rgba(0, 200, 255, 0.35));
+}
+
+.carousel-item.active .carousel-img-free {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 16px rgba(0, 200, 255, 0.55));
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .carousel-img-free {
+    height: 280px;
+    margin: 25px auto;
+  }
+}
