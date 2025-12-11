@@ -118,3 +118,540 @@ p, li { color: #cfe8ff; opacity: 0.95; }
   width: 70px;
   height: 70px;
 }
+
+/* Container da Seção */
+.scanner-section {
+  padding: 80px 20px;
+  text-align: center;
+  background: radial-gradient(circle at 50% 50%, #0d101b 0%, #000 100%);
+}
+
+/* O Wrapper do Scanner */
+.scanner-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: 400px; /* Altura fixa importante */
+  margin: 40px auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+  border: 1px solid rgba(255,255,255,0.1);
+  cursor: col-resize; /* Cursor de redimensionar */
+  user-select: none;
+}
+
+/* Camadas (Layers) */
+.scanner-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Conteúdo centralizado dentro da camada */
+.layer-content {
+  width: 800px; /* Largura fixa igual ao container pai para manter alinhamento */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+/* --- ESTILO: COM MARKETING (VERDE/NEON) --- */
+.layer-success {
+  background: radial-gradient(circle at center, #0f2e20 0%, #000 100%);
+}
+
+.success-graph .trend-line path {
+  filter: drop-shadow(0 0 10px #00ff88);
+}
+
+.neon-green {
+  color: #00ff88;
+  text-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
+}
+
+.status-tag.green {
+  margin-top: 20px;
+  padding: 6px 12px;
+  border: 1px solid #00ff88;
+  color: #00ff88;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  background: rgba(0, 255, 136, 0.1);
+}
+
+/* --- ESTILO: SEM MARKETING (CINZA/VERMELHO) --- */
+.layer-danger {
+  width: 50%; /* Começa na metade */
+  background: #111; /* Fundo chapado sem vida */
+  filter: grayscale(100%) contrast(1.1); /* Deixa P&B */
+  border-right: 2px solid rgba(255,255,255,0.2); /* Linha de corte */
+  z-index: 10;
+}
+
+/* Se quiser deixar um pouquinho de vermelho aparecendo no "Sem Marketing", remova o filter: grayscale acima */
+
+.danger-graph .trend-line {
+  opacity: 0.6;
+}
+
+.val.gray { color: #888; }
+
+.status-tag.red {
+  margin-top: 20px;
+  padding: 6px 12px;
+  border: 1px solid #ff4444;
+  color: #ff4444;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  background: rgba(255, 68, 68, 0.1);
+}
+
+/* Elementos Comuns */
+.scanner-data h3 {
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.metrics-row {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 10px;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+}
+
+.metric .lbl {
+  font-size: 0.8rem;
+  color: #aaa;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.metric .val {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* Gráfico SVG Background */
+.graph-visual {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Fica atrás do texto */
+  opacity: 0.3;
+}
+.graph-visual svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* --- O PUXADOR (HANDLE) --- */
+.scanner-handle {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 40px;
+  transform: translateX(-50%);
+  z-index: 20;
+  pointer-events: none; /* Deixa passar o clique para o wrapper */
+  display: flex;
+  justify-content: center;
+}
+
+.handle-line {
+  width: 2px;
+  height: 100%;
+  background: #fff;
+  box-shadow: 0 0 15px #fff;
+}
+
+.handle-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #000;
+  border: 2px solid #fff;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(255,255,255,0.5);
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .scanner-wrapper { height: 350px; }
+  .layer-content { width: 100vw; padding: 20px; }
+  .metrics-row { gap: 20px; }
+  .metric .val { font-size: 1.5rem; }
+}
+.icon-scaner{
+  height: 70px;
+  width: 70px;
+}
+/* Container da Seção */
+.funnel-section {
+  padding: 80px 20px;
+  position: relative;
+  text-align: center;
+  /* Garante que não quebre o layout */
+  overflow: hidden; 
+}
+
+.funnel-header {
+  margin-bottom: 60px;
+}
+
+/* Wrapper do Pipeline */
+.pipeline-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Alinha verticalmente */
+  gap: 40px;
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* A Linha Neon que conecta tudo */
+.pipeline-line {
+  position: absolute;
+  top: 50%;
+  left: 50px; /* Ajuste para não sair do container */
+  right: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    #5ef 20%, 
+    #b086ff 50%, 
+    #5ef 80%, 
+    transparent 100%
+  );
+  transform: translateY(-50%);
+  z-index: 0; /* Fica atrás dos cards */
+  opacity: 0.5;
+  box-shadow: 0 0 15px rgba(94, 239, 255, 0.3);
+}
+
+/* O Passo individual */
+.pipeline-step {
+  position: relative;
+  z-index: 1; /* Fica na frente da linha */
+  flex: 1;
+}
+
+/* O Card de Vidro */
+.step-card {
+  background: rgba(13, 16, 26, 0.8); /* Fundo escuro para tapar a linha */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 30px 20px;
+  border-radius: 20px;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Número gigante no fundo (Marca d'água) */
+.step-number {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  font-size: 4rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.03);
+  font-family: 'Inter', sans-serif;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Ícone com brilho */
+.step-icon-glow {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+  transition: transform 0.3s;
+}
+
+/* Textos */
+.step-card h3 {
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 0 0 5px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.step-card p {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* --- HOVER EFFECTS --- */
+.step-card:hover {
+  transform: translateY(-10px); /* Flutua para cima */
+  border-color: #5ef; /* Borda neon */
+  box-shadow: 0 10px 30px rgba(94, 239, 255, 0.15);
+  background: rgba(13, 16, 26, 0.95);
+}
+
+.step-card:hover .step-icon-glow {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 20px #5ef);
+}
+
+.step-card:hover .step-number {
+  color: rgba(94, 239, 255, 0.1); /* Número acende levemente */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .pipeline-wrapper {
+    flex-direction: column; /* Empilha no mobile */
+    gap: 20px;
+  }
+  
+  .pipeline-line {
+    /* Transforma a linha horizontal em vertical no mobile */
+    width: 2px;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    right: auto;
+    background: linear-gradient(180deg, transparent, #5ef, transparent);
+    transform: translateX(-50%);
+  }
+  
+  .pipeline-step {
+    width: 100%;
+    max-width: 350px;
+  }
+} 
+/* Container da Seção */
+.charts-section {
+  padding: 60px 20px 100px 20px;
+  position: relative;
+}
+
+.section-header-compact {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Indicador "Ao Vivo" */
+.live-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-family: monospace;
+  color: #00ff88;
+  background: rgba(0, 255, 136, 0.1);
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(0, 255, 136, 0.2);
+}
+
+.pulse-dot {
+  width: 6px;
+  height: 6px;
+  background: #00ff88;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #00ff88;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink { 50% { opacity: 0.4; } }
+
+/* =========================================
+   A INTERFACE (DASHBOARD)
+   ========================================= */
+.dash-interface {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: rgba(15, 23, 42, 0.75); /* Vidro escuro denso */
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+}
+
+/* Barra Superior (UI Fake) */
+.interface-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.window-controls { display: flex; gap: 8px; }
+.ctrl { width: 10px; height: 10px; border-radius: 50%; }
+.ctrl.red { background: #ff5f56; }
+.ctrl.yellow { background: #ffbd2e; }
+.ctrl.green { background: #27c93f; }
+
+.interface-title {
+  color: #64748b;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.interface-actions { display: flex; gap: 10px; }
+.action-icon {
+  background: transparent;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* =========================================
+   GRID DO SISTEMA
+   ========================================= */
+.interface-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Esquerda Larga | Direita Estreita */
+  /* Removemos gaps visíveis e usamos bordas */
+}
+
+/* Células Gerais */
+.dash-cell {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Célula Principal (Esquerda) */
+.main-cell {
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  min-height: 450px;
+}
+
+/* Coluna Lateral */
+.sidebar-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.side-cell {
+  flex: 1; /* Ocupa 50% da altura cada */
+}
+
+.side-cell.top {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Headers de cada gráfico */
+.cell-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.cell-head h4 {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #e2e8f0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Inter', sans-serif;
+}
+
+.cell-head .icon { opacity: 0.7; font-size: 1.1rem; }
+
+.expand-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.expand-btn svg { width: 14px; height: 14px; }
+
+.expand-btn:hover {
+  border-color: #5ef;
+  color: #5ef;
+  background: rgba(94, 239, 255, 0.05);
+}
+
+/* Container do Canvas (Importante para Chart.js) */
+.chart-container {
+  position: relative;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.chart-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* =========================================
+   RESPONSIVIDADE
+   ========================================= */
+@media (max-width: 900px) {
+  .interface-grid {
+    grid-template-columns: 1fr; /* Vira coluna única */
+  }
+  
+  .main-cell {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    min-height: 300px;
+  }
+  
+  .sidebar-column {
+    min-height: 600px; /* Garante altura para os 2 gráficos menores */
+  }
+  
+  .interface-title { display: none; } /* Esconde título no mobile para limpar */
+}
+.icon-card{
+  height: 70px;
+  width: 70px;
+}

@@ -32,10 +32,10 @@ body {
     text-align: center;
 }
 
-.ordago-logo-v2 {
+.ordago-logo-v2{
     width: 220px; /* Logo maior e mais impactante */
     height: auto;
-    filter: drop-shadow(0 0 20px rgba(0, 191, 255, 0.7)); /* Efeito Neon Forte */
+    /* filter: drop-shadow(0 0 20px rgba(0, 191, 255, 0.7)); */
 }
 
 .company-slogan {
@@ -328,4 +328,17 @@ body {
     height: 280px;
     margin: 25px auto;
   }
+}
+
+.flag-tooltip{
+    color: #f5f5f5;
+}
+.company-slogan{
+    color: #f5f5f5;
+}
+.flag-arrow{
+    color: #f5f5f5;
+}
+.ordago-logo-v2{
+    border-radius: 15px;
 }
